@@ -1,0 +1,9 @@
+[submodule "rtl/buses/axi"]
+	path = rtl/buses/axi
+	url = https://github.com/lheywang-hdl-libs/axi
+[submodule "rtl/buses/avalon"]
+	path = rtl/buses/avalon
+	url = https://github.com/lheywang-hdl-libs/avalon
+[submodule "rtl/buses/reg_interface"]
+	path = rtl/buses/reg_interface
+	url = https://github.com/lheywang-hdl-libs/reg_interface

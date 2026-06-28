@@ -11,30 +11,5 @@
  * @copyright l.heywang, MIT License.
  */
 
-package bus_endpoint;
 
-    /**
-     * Define the cell type to be used.
-     */
-    typedef enum logic [2 : 0] {
-        TYPE_REG_IN,
-        TYPE_REG_OUT,
-        TYPE_FIFO_IN,
-        TYPE_FIFO_OUT,
-        TYPE_SRAM_IN,
-        TYPE_SRAM_OUT,
-        TYPE_IRQ
-    } cell_type_t;
-
-    /*
-     * Structure to be passed to configure the register.
-     */
-    typedef struct packed {
-        cell_type_t cell_type;      // The cell type.
-        logic [31 : 0] offset;      // The offset at which it's placed.
-        logic [31 : 0] size;        // Reserve memory space.
-        logic [31 : 0] mem_size;    // Configure the FIFO or the SRAM size;
-    } cell_config_t;
-
-endpackage: bus_endpoint
 

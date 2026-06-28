@@ -14,52 +14,65 @@ interface cell_interface #(
 );
 
     // =========================================================================
-    // FSM -> CELLS
+    // COMMANDS
     // =========================================================================
-    logic [ADDR_WIDTH - 1 : 0]          addr;
-    logic [DATA_WIDTH - 1 : 0]          wdata;
-    logic [(DATA_WIDTH / 8) - 1 : 0]    wstrb;
     logic [5:0]                         atop;
-
-    logic                               req_write;
-    logic                               req_read;
-
-    // =========================================================================
-    // CELLS -> FSM
-    // =========================================================================
-    logic                               ready;
-    logic [DATA_WIDTH - 1 : 0]          rdata;
+    logic                               request;
+    logic                               done;
     logic                               error;
 
-    
+    // =========================================================================
+    // DATA BUS
+    // =========================================================================
+    logic [ADDR_WIDTH - 1 : 0]          addr;
+    logic [DATA_WIDTH - 1 : 0]          data;
+    logic [(DATA_WIDTH / 8) - 1 : 0]    byteen;
+
+
     // =========================================================================
     // MODPORT FSM
     // =========================================================================
-    modport fsm (
-        output addr,
-        output wdata,
-        output wstrb,
-        output atop,
-        output req_write,
-        output req_read,
-        input  ready,
-        input  rdata,
-        input  error
+    modport fsm_in (
+        output  atop,
+        output  request,
+        output  addr,
+        input   data,
+        output  byteen,
+        input   done,
+        input   error
+    );
+
+    modport fsm_out (
+        output  atop,
+        output  request,
+        output  addr,
+        output  data,
+        output  byteen,
+        input   done,
+        input   error
     );
 
     // =========================================================================
     // MODPORT CELLS
     // =========================================================================
-    modport cells (
-        input  addr,
-        input  wdata,
-        input  wstrb,
-        input  atop,
-        input  req_write,
-        input  req_read,
-        output ready,
-        output rdata,
-        output error
+    modport cells_in (
+        input   atop,
+        input   request,
+        input   addr,
+        output  data,
+        input   byteen,
+        output  done,
+        output  error
+    );
+
+    modport cells_out (
+        input   atop,
+        input   request,
+        input   addr,
+        input   data,
+        input   byteen,
+        output  done,
+        output  error
     );
 
 endinterface: cell_interface

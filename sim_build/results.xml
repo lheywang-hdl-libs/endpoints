@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1782678734" />
+    <testcase name="test_address_decoding_logic" classname="testbench.tb_address_decoder" file="/home/user/dev/endpoints/tb/testbench/tb_address_decoder.py" lineno="7" time="0.0005166530609130859" sim_time_ns="25.0" ratio_time="48388.3710198431">
+      <failure error_type="AssertionError" error_msg="" />
+    </testcase>
+  </testsuite>
+</testsuites>

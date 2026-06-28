@@ -1,0 +1,173 @@
+// Dump of all post-preprocessor input
+// Blank lines and `line directives have been removed
+//
+// Information:
+//   Version: Verilator 5.046 2026-02-28 rev fedora-5.046
+//   Arguments: -cc --exe -Mdir /home/user/dev/endpoints/sim_build --top-module address_decoder --vpi --public-flat-rw --prefix Vtop -o address_decoder -LDFLAGS -Wl,-rpath,/home/user/.local/lib/python3.14/site-packages/cocotb/libs -L/home/user/.local/lib/python3.14/site-packages/cocotb/libs -lcocotbvpi_verilator -Wall -Wno-fatal --trace --debug /home/user/.local/lib/python3.14/site-packages/cocotb/share/lib/verilator/verilator.cpp /home/user/dev/endpoints/rtl/config/bus_endpoint.sv /home/user/dev/endpoints/rtl/config/cell_interface.sv /home/user/dev/endpoints/rtl/modules/cells/fifo_in.sv /home/user/dev/endpoints/rtl/modules/cells/fifo_out.sv /home/user/dev/endpoints/rtl/modules/cells/register_in.sv /home/user/dev/endpoints/rtl/modules/cells/register_out.sv /home/user/dev/endpoints/rtl/modules/cells/sram_in.sv /home/user/dev/endpoints/rtl/modules/cells/sram_out.sv /home/user/dev/endpoints/rtl/modules/address_decoder.sv
+//   Build jobs: 1
+//   Verilate jobs: 1
+
+// verilator fargs -cc
+// verilator fargs --exe
+// verilator fargs --top-module address_decoder
+// verilator fargs --vpi
+// verilator fargs --public-flat-rw
+// verilator fargs --prefix Vtop
+// verilator fargs -o address_decoder
+// verilator fargs -LDFLAGS "-Wl,-rpath,/home/user/.local/lib/python3.14/site-packages/cocotb/libs -L/home/user/.local/lib/python3.14/site-packages/cocotb/libs -lcocotbvpi_verilator"
+// verilator fargs -Wall
+// verilator fargs -Wno-fatal
+// verilator fargs --trace
+// verilator fargs /home/user/.local/lib/python3.14/site-packages/cocotb/share/lib/verilator/verilator.cpp
+
+`begin_keywords "1800-2023"
+package bus_endpoint;
+    typedef enum int {
+        TYPE_REG_IN,
+        TYPE_REG_OUT,
+        TYPE_FIFO_IN,
+        TYPE_FIFO_OUT,
+        TYPE_SRAM_IN,
+        TYPE_SRAM_OUT,
+        TYPE_IRQ
+    } cell_type_t;
+    typedef struct {
+        int bit_offset;  
+        int bit_width;   
+    } field_config_t;
+    typedef struct {
+        cell_type_t cell_type;           
+        int offset;                      
+        int size;                        
+        int mem_size;                    
+        field_config_t cell_config[32];  
+    } cell_config_t;
+    typedef enum int {
+        BUS_AVALON,
+        BUS_AXI_LITE,
+        BUS_AXI
+    } cell_bus_t;
+    typedef struct {
+        int         bus;
+        logic       burst;
+        logic       atomic;
+        int         data_width;
+        int         addr_width;
+    } endpoint_config_t;
+    localparam DEFAULT_REG_COUNT = 64;
+endpackage: bus_endpoint
+`begin_keywords "1800-2023"
+interface cell_interface #(
+    parameter int DATA_WIDTH = 32,
+    parameter int ADDR_WIDTH = 32
+);
+    logic [5:0]                         atop;
+    logic                               request;
+    logic                               done;
+    logic                               error;
+    logic [ADDR_WIDTH - 1 : 0]          addr;
+    logic [DATA_WIDTH - 1 : 0]          data;
+    logic [(DATA_WIDTH / 8) - 1 : 0]    byteen;
+    modport fsm_in (
+        output  atop,
+        output  request,
+        output  addr,
+        input   data,
+        output  byteen,
+        input   done,
+        input   error
+    );
+    modport fsm_out (
+        output  atop,
+        output  request,
+        output  addr,
+        output  data,
+        output  byteen,
+        input   done,
+        input   error
+    );
+    modport cells_in (
+        input   atop,
+        input   request,
+        input   addr,
+        output  data,
+        input   byteen,
+        output  done,
+        output  error
+    );
+    modport cells_out (
+        input   atop,
+        input   request,
+        input   addr,
+        input   data,
+        input   byteen,
+        output  done,
+        output  error
+    );
+endinterface: cell_interface
+`begin_keywords "1800-2023"
+module fifo_in();
+endmodule: fifo_in
+`begin_keywords "1800-2023"
+module fifo_out();
+endmodule: fifo_out
+`begin_keywords "1800-2023"
+module register_in();
+endmodule: register_in
+`begin_keywords "1800-2023"
+module register_out();
+endmodule: register_out
+`begin_keywords "1800-2023"
+module sram_in();
+endmodule: sram_in
+`begin_keywords "1800-2023"
+module sram_out();
+endmodule: sram_out
+`begin_keywords "1800-2023"
+import bus_endpoint::cell_config_t;
+import bus_endpoint::endpoint_config_t;
+import bus_endpoint::cell_bus_t;
+let max(a,b) = (a > b) ? a : b;
+module address_decoder #(
+    parameter cell_config_t CELL_CONFIG[bus_endpoint::DEFAULT_REG_COUNT] = '{
+        default: '{
+            cell_type:      bus_endpoint::TYPE_REG_OUT,
+            offset:         0,
+            size:           4,
+            mem_size:       0,
+            cell_config: '{
+                0: '{
+                    bit_offset: 0,
+                    bit_width:  32
+                },
+                default: '{
+                    bit_offset: 0,
+                    bit_width:  0
+                }
+            }
+        }
+    },
+    parameter endpoint_config_t MODULE_CONFIG = '{
+        bus:        bus_endpoint::BUS_AXI_LITE,
+        burst:      0,
+        atomic:     0,
+        data_width: 32,
+        addr_width: 32
+    },
+    parameter int BASE_ADDRESS = 32'h20000000
+) (
+    input   logic                                                   clk,
+    input   logic                                                   rst_n,
+    input   logic [MODULE_CONFIG.addr_width -1 : 0]                 input_address,
+    input   logic                                                   addr_valid,
+    output  logic                                                   match,
+    output  logic [max($size(CELL_CONFIG[0].cell_config), 1) : 0 ]    enables
+);
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (input_address == BASE_ADDRESS) begin
+            match <= 1'b1;
+        end else begin
+            match <= 1'b0;
+        end
+    end
+endmodule: address_decoder

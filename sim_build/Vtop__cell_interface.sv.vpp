@@ -1,0 +1,97 @@
+`begin_keywords "1800-2023"
+`line 1 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 1
+
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+
+`line 9 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+ 
+
+`line 11 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+interface cell_interface #(
+    parameter int DATA_WIDTH = 32,
+    parameter int ADDR_WIDTH = 32
+);
+
+`line 16 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+     
+     
+     
+    logic [5:0]                         atop;
+    logic                               request;
+    logic                               done;
+    logic                               error;
+
+`line 24 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+     
+     
+     
+    logic [ADDR_WIDTH - 1 : 0]          addr;
+    logic [DATA_WIDTH - 1 : 0]          data;
+    logic [(DATA_WIDTH / 8) - 1 : 0]    byteen;
+
+
+`line 32 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+     
+     
+     
+    modport fsm_in (
+        output  atop,
+        output  request,
+        output  addr,
+        input   data,
+        output  byteen,
+        input   done,
+        input   error
+    );
+
+`line 45 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+    modport fsm_out (
+        output  atop,
+        output  request,
+        output  addr,
+        output  data,
+        output  byteen,
+        input   done,
+        input   error
+    );
+
+`line 55 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+     
+     
+     
+    modport cells_in (
+        input   atop,
+        input   request,
+        input   addr,
+        output  data,
+        input   byteen,
+        output  done,
+        output  error
+    );
+
+`line 68 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+    modport cells_out (
+        input   atop,
+        input   request,
+        input   addr,
+        input   data,
+        input   byteen,
+        output  done,
+        output  error
+    );
+
+`line 78 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0
+endinterface: cell_interface
+
+`line 80 "/home/user/dev/endpoints/rtl/config/cell_interface.sv" 0

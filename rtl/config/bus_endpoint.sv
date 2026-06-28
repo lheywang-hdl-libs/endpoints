@@ -49,7 +49,7 @@ package bus_endpoint;
         int offset;                     // The offset at which it's placed.
         int size;                       // Reserve memory space.
         int mem_size;                   // Configure the FIFO or the SRAM size;
-        field_config_t cell_config[];   // Store the bitfield config for the registers.
+        field_config_t cell_config[32]; // Store the bitfield config for the registers.
     } cell_config_t;
 
     /**
@@ -65,11 +65,46 @@ package bus_endpoint;
      * Define an endpoint configuration.
      */
     typedef struct {
-        cell_bus_t  bus;
+        int         bus;
         logic       burst;
         logic       atomic;
         int         data_width;
         int         addr_width;
     } endpoint_config_t;
+    
+    /*
+     * Constant values
+     */
+    // localparam endpoint_config_t DEFAULT_ENDPOINT = '{
+    //     bus:        bus_endpoint::BUS_AXI_LITE,
+    //     burst:      0,
+    //     atomic:     0,
+    //     data_width: 32,
+    //     addr_width: 32
+    // };
+
+    // localparam cell_config_t DEFAULT_CONFIG[32] = '{
+    //     default: '{
+    //         cell_type:      bus_endpoint::TYPE_REG_OUT,
+    //         offset:         0,
+    //         size:           4,
+    //         mem_size:       0,
+    //         cell_config: '{
+    //             0: '{
+    //                 bit_offset: 0,
+    //                 bit_width:  32
+    //             },
+    //             default: '{
+    //                 bit_offset: 0,
+    //                 bit_width:  0
+    //             }
+    //         }
+    //     }
+    // };
+
+    /*
+     * Module configs
+     */
+    localparam DEFAULT_REG_COUNT = 64;
 
 endpackage: bus_endpoint

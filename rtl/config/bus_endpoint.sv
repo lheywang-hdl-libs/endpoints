@@ -70,6 +70,8 @@ package bus_endpoint;
         logic       atomic;
         int         data_width;
         int         addr_width;
+        int         prefix_size;
+        int         suffix_size;
     } endpoint_config_t;
     
     /*

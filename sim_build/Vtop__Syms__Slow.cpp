@@ -11,7 +11,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(250);
+    Verilated::stackCheck(124);
     // Setup sub module instances
     TOP__bus_endpoint.ctor(this, "bus_endpoint");
     // Configure time unit / time precision
@@ -25,10 +25,15 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     // Setup scopes
     __Vscopep_TOP = new VerilatedScope{this, "TOP", "TOP", "<null>", 0, VerilatedScope::SCOPE_OTHER};
     __Vscopep_address_decoder = new VerilatedScope{this, "address_decoder", "address_decoder", "address_decoder", -12, VerilatedScope::SCOPE_MODULE};
+    __Vscopep_address_decoder__is_addr_split_correct = new VerilatedScope{this, "address_decoder.is_addr_split_correct", "is_addr_split_correct", "<null>", -12, VerilatedScope::SCOPE_OTHER};
+    __Vscopep_address_decoder__is_base_aligned = new VerilatedScope{this, "address_decoder.is_base_aligned", "is_base_aligned", "<null>", -12, VerilatedScope::SCOPE_OTHER};
+    __Vscopep_address_decoder__unnamedblk1 = new VerilatedScope{this, "address_decoder.unnamedblk1", "unnamedblk1", "<null>", -12, VerilatedScope::SCOPE_OTHER};
+    __Vscopep_address_decoder__unnamedblk1__cell_validation__is_offset_aligned = new VerilatedScope{this, "address_decoder.unnamedblk1.cell_validation.is_offset_aligned", "is_offset_aligned", "<null>", -12, VerilatedScope::SCOPE_OTHER};
     __Vscopep_bus_endpoint = new VerilatedScope{this, "bus_endpoint", "bus_endpoint", "bus_endpoint", -12, VerilatedScope::SCOPE_PACKAGE};
     // Set up scope hierarchy
     __Vhier.add(0, __Vscopep_address_decoder);
     __Vhier.add(0, __Vscopep_bus_endpoint);
+    __Vhier.add(__Vscopep_address_decoder, __Vscopep_address_decoder__unnamedblk1);
     // Setup export functions - final: 0
     // Setup export functions - final: 1
     // Setup public variables
@@ -47,6 +52,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_address_decoder->varInsert("input_address", &(TOP.address_decoder__DOT__input_address), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_address_decoder->varInsert("match", &(TOP.address_decoder__DOT__match), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_address_decoder->varInsert("rst_n", &(TOP.address_decoder__DOT__rst_n), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_address_decoder__unnamedblk1->varInsert("index", &(TOP.address_decoder__DOT__unnamedblk1__DOT__index), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW|VLVF_DPI_CLAY|VLVF_SIGNED, 0, 1 ,31,0);
     __Vscopep_bus_endpoint->varInsert("DEFAULT_REG_COUNT", const_cast<void*>(static_cast<const void*>(&(TOP__bus_endpoint.DEFAULT_REG_COUNT))), true, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW|VLVF_SIGNED, 0, 1 ,31,0);
 }
 
@@ -54,11 +60,16 @@ Vtop__Syms::~Vtop__Syms() {
     // Tear down scope hierarchy
     __Vhier.remove(0, __Vscopep_address_decoder);
     __Vhier.remove(0, __Vscopep_bus_endpoint);
+    __Vhier.remove(__Vscopep_address_decoder, __Vscopep_address_decoder__unnamedblk1);
     // Clear keys from hierarchy map after values have been removed
     __Vhier.clear();
     // Tear down scopes
     VL_DO_CLEAR(delete __Vscopep_TOP, __Vscopep_TOP = nullptr);
     VL_DO_CLEAR(delete __Vscopep_address_decoder, __Vscopep_address_decoder = nullptr);
+    VL_DO_CLEAR(delete __Vscopep_address_decoder__is_addr_split_correct, __Vscopep_address_decoder__is_addr_split_correct = nullptr);
+    VL_DO_CLEAR(delete __Vscopep_address_decoder__is_base_aligned, __Vscopep_address_decoder__is_base_aligned = nullptr);
+    VL_DO_CLEAR(delete __Vscopep_address_decoder__unnamedblk1, __Vscopep_address_decoder__unnamedblk1 = nullptr);
+    VL_DO_CLEAR(delete __Vscopep_address_decoder__unnamedblk1__cell_validation__is_offset_aligned, __Vscopep_address_decoder__unnamedblk1__cell_validation__is_offset_aligned = nullptr);
     VL_DO_CLEAR(delete __Vscopep_bus_endpoint, __Vscopep_bus_endpoint = nullptr);
     // Tear down sub module instances
     TOP__bus_endpoint.dtor();

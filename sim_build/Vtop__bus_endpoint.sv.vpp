@@ -100,11 +100,13 @@ package bus_endpoint;
         logic       atomic;
         int         data_width;
         int         addr_width;
+        int         prefix_size;
+        int         suffix_size;
     } endpoint_config_t;
     
     
 
-`line 77 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
+`line 79 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
  
      
      
@@ -114,7 +116,7 @@ package bus_endpoint;
      
      
 
-`line 86 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
+`line 88 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
      
      
      
@@ -133,15 +135,15 @@ package bus_endpoint;
      
      
      
-
-`line 105 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
-    
 
 `line 107 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
+    
+
+`line 109 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
  
     localparam DEFAULT_REG_COUNT = 64;
 
-`line 110 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
+`line 112 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
 endpackage: bus_endpoint
 
-`line 112 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0
+`line 114 "/home/user/dev/endpoints/rtl/config/bus_endpoint.sv" 0

@@ -8,17 +8,56 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_static\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.__Vtrigprevexpr___TOP__address_decoder__DOT__clk__0 
-        = vlSelfRef.address_decoder__DOT__clk;
-    vlSelfRef.__Vtrigprevexpr___TOP__address_decoder__DOT__rst_n__0 
-        = vlSelfRef.address_decoder__DOT__rst_n;
 }
+
+VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf);
 
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_initial\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    Vtop___024root___eval_initial__TOP(vlSelf);
+}
+
+VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_initial__TOP\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if (VL_UNLIKELY((vlSymsp->_vm_contextp__->assertOnGet(2, 1)))) {
+        VL_WRITEF_NX("[%0t] %%Fatal: address_decoder.sv:62: Assertion failed in %Naddress_decoder.is_base_aligned: Base address is not aligned with a 4 byte boundary.\n",0,
+                     64,VL_TIME_UNITED_Q(1),-12,vlSymsp->name());
+        VL_STOP_MT("/home/user/dev/endpoints/rtl/modules/address_decoder.sv", 62, "", false);
+    }
+    if (vlSymsp->_vm_contextp__->assertOnGet(2, 1)) {
+        if (VL_UNLIKELY((((vlSelfRef.address_decoder__DOT__MODULE_CONFIG
+                           .__PVT__prefix_size + vlSelfRef.address_decoder__DOT__MODULE_CONFIG
+                           .__PVT__suffix_size) != vlSelfRef.address_decoder__DOT__MODULE_CONFIG
+                          .__PVT__addr_width)))) {
+            VL_WRITEF_NX("[%0t] %%Fatal: address_decoder.sv:65: Assertion failed in %Naddress_decoder.is_addr_split_correct: Sum of prefix and suffix of the address does not match the address size.\n",0,
+                         64,VL_TIME_UNITED_Q(1),-12,
+                         vlSymsp->name());
+            VL_STOP_MT("/home/user/dev/endpoints/rtl/modules/address_decoder.sv", 65, "", false);
+        }
+    }
+    vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index = 0U;
+    while (VL_GTS_III(32, 0x00000040U, vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index)) {
+        if (vlSymsp->_vm_contextp__->assertOnGet(2, 1)) {
+            if (VL_UNLIKELY(((0U != (3U & vlSelfRef.address_decoder__DOT__CELL_CONFIG
+                                     [(0x0000003fU 
+                                       & vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index)]
+                                     .__PVT__offset))))) {
+                VL_WRITEF_NX("[%0t] %%Fatal: address_decoder.sv:70: Assertion failed in %Naddress_decoder.unnamedblk1.cell_validation.is_offset_aligned: Cell config at index 0x%0x is not aligned with a 4 byte boundary.\n",0,
+                             64,VL_TIME_UNITED_Q(1),
+                             -12,vlSymsp->name(),32,
+                             vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index);
+                VL_STOP_MT("/home/user/dev/endpoints/rtl/modules/address_decoder.sv", 70, "", false);
+            }
+        }
+        vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index 
+            = ((IData)(1U) + vlSelfRef.address_decoder__DOT__unnamedblk1__DOT__index);
+    }
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_final(Vtop___024root* vlSelf) {
@@ -141,24 +180,6 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63
 }
 #endif  // VL_DEBUG
 
-bool Vtop___024root___trigger_anySet__act(const VlUnpacked<QData/*63:0*/, 1> &in);
-
-#ifdef VL_DEBUG
-VL_ATTR_COLD void Vtop___024root___dump_triggers__act(const VlUnpacked<QData/*63:0*/, 1> &triggers, const std::string &tag) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___dump_triggers__act\n"); );
-    // Body
-    if ((1U & (~ (IData)(Vtop___024root___trigger_anySet__act(triggers))))) {
-        VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
-    }
-    if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @(posedge address_decoder.clk)\n");
-    }
-    if ((1U & (IData)((triggers[0U] >> 1U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @(negedge address_decoder.rst_n)\n");
-    }
-}
-#endif  // VL_DEBUG
-
 VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___ctor_var_reset\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -177,18 +198,11 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->address_decoder__DOT__addr_valid = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2270260777399775089ull);
     vlSelf->address_decoder__DOT__match = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12815594787963449293ull);
     vlSelf->address_decoder__DOT__enables = VL_SCOPED_RAND_RESET_Q(33, __VscopeHash, 11163729192756309392ull);
+    vlSelf->address_decoder__DOT__unnamedblk1__DOT__index = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VicoTriggered[__Vi0] = 0;
-    }
-    for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
-        vlSelf->__VactTriggered[__Vi0] = 0;
-    }
-    vlSelf->__Vtrigprevexpr___TOP__address_decoder__DOT__clk__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__address_decoder__DOT__rst_n__0 = 0;
-    for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
-        vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
 }

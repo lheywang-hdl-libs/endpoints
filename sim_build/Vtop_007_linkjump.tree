@@ -1,205 +1,248 @@
-Verilator Tree Dump (format 0x3900) from <e1939> to <e2165>
+Verilator Tree Dump (format 0x3900) from <e2105> to <e2417>
      NETLIST 0x5555569ca000 <e1> {a0aa}  $root [1ps/1ps]
-    1: MODULE 0x555556a7e280 <e1921> {m19ai}  address_decoder  L1 D2 [1ps]
-    1:2: VAR 0x555556a6ca20 <e1384> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1: BRACKETARRAYDTYPE 0x555556a80a50 <e1385> {m20bo} @dt=0@
-    1:2:1:1: REFDTYPE 0x555556a6ba40 <e1380> {m20ap} @dt=0@  cell_config_t cpkg=0x5555569d1e00 typedefp=0x555556a53860 -> STRUCTDTYPE 0x5555569d2ee0 <e1964#> {e47an} @dt=0@  bus_endpoint::cell_config_t
-    1:2:1:2: VARREF 0x555556a830e0 <e2024#> {m20cd} @dt=0@  DEFAULT_REG_COUNT pkg=0x5555569d1e00 [RV] <- VAR 0x5555569cb9e0 <e1020> {e108aq} @dt=0@  DEFAULT_REG_COUNT [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
-    1:2:3: PATTERN 0x5555569c7680 <e1386> {m20cy} @dt=0@
-    1:2:3:2: PATMEMBER 0x555556a809a0 <e1376> {m21aj} @dt=0@ [DEFAULT]
-    1:2:3:2:1: PATTERN 0x5555569c75e0 <e1375> {m21as} @dt=0@
-    1:2:3:2:1:2: PATMEMBER 0x555556a80210 <e1304> {m22an} @dt=0@
-    1:2:3:2:1:2:1: ENUMITEMREF 0x555556a88750 <e2030#> {m22br} @dt=0@  TYPE_REG_OUT -> ENUMITEM 0x555556a5b980 <e869> {e21aj} @dt=0@  TYPE_REG_OUT
-    1:2:3:2:1:2:2: TEXT 0x555556a6ee40 <e1305> {m22an} "cell_type"
-    1:2:3:2:1:2: PATMEMBER 0x555556a802c0 <e1313> {m23an} @dt=0@
-    1:2:3:2:1:2:1: CONST 0x555556a6b2c0 <e1310> {m23bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:2: TEXT 0x555556a6efc0 <e1312> {m23an} "offset"
-    1:2:3:2:1:2: PATMEMBER 0x555556a80370 <e1321> {m24an} @dt=0@
-    1:2:3:2:1:2:1: CONST 0x555556a6b3b0 <e1318> {m24bd} @dt=0x555556a50a80@(G/swu32/3)  ?32?sh4
-    1:2:3:2:1:2:2: TEXT 0x555556a6f080 <e1320> {m24an} "size"
-    1:2:3:2:1:2: PATMEMBER 0x555556a80420 <e1329> {m25an} @dt=0@
-    1:2:3:2:1:2:1: CONST 0x555556a6b4a0 <e1326> {m25bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:2: TEXT 0x555556a6f140 <e1328> {m25an} "mem_size"
-    1:2:3:2:1:2: PATMEMBER 0x555556a808f0 <e1374> {m26an} @dt=0@
-    1:2:3:2:1:2:1: PATTERN 0x5555569c7540 <e1371> {m26ba} @dt=0@
-    1:2:3:2:1:2:1:2: PATMEMBER 0x555556a80630 <e1351> {m27ar} @dt=0@
-    1:2:3:2:1:2:1:2:1: PATTERN 0x5555569c7400 <e1350> {m27au} @dt=0@
-    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a804d0 <e1340> {m28av} @dt=0@
-    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b680 <e1339> {m28bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f2c0 <e1341> {m28av} "bit_offset"
-    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a80580 <e1349> {m29av} @dt=0@
-    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b770 <e1346> {m29bh} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f380 <e1348> {m29av} "bit_width"
-    1:2:3:2:1:2:1:2:2: CONST 0x555556a6b590 <e1352> {m27ar} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:1:2: PATMEMBER 0x555556a80840 <e1370> {m31ar} @dt=0@ [DEFAULT]
-    1:2:3:2:1:2:1:2:1: PATTERN 0x5555569c74a0 <e1368> {m31ba} @dt=0@
-    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a806e0 <e1358> {m32av} @dt=0@
-    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b860 <e1357> {m32bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f440 <e1359> {m32av} "bit_offset"
-    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a80790 <e1367> {m33av} @dt=0@
-    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b950 <e1364> {m33bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f500 <e1366> {m33av} "bit_width"
-    1:2:3:2:1:2:2: TEXT 0x555556a6f200 <e1373> {m26an} "cell_config"
-    1:2: VAR 0x555556a6cb40 <e1434> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1: REFDTYPE 0x555556a82000 <e1432> {m38ap} @dt=0@  endpoint_config_t cpkg=0x5555569d1e00 typedefp=0x555556a53a40 -> STRUCTDTYPE 0x5555569d3180 <e1974#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
-    1:2:3: PATTERN 0x5555569c7720 <e1433> {m38bx} @dt=0@
-    1:2:3:2: PATMEMBER 0x555556a80bb0 <e1396> {m39aj} @dt=0@
-    1:2:3:2:1: ENUMITEMREF 0x555556a88820 <e2036#> {m39bj} @dt=0@  BUS_AXI_LITE -> ENUMITEM 0x555556a62840 <e960> {e60aj} @dt=0@  BUS_AXI_LITE
-    1:2:3:2:2: TEXT 0x555556a6f5c0 <e1397> {m39aj} "bus"
-    1:2:3:2: PATMEMBER 0x555556a80c60 <e1405> {m40aj} @dt=0@
-    1:2:3:2:1: CONST 0x555556a6bc20 <e1402> {m40av} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:2: TEXT 0x555556a6f740 <e1404> {m40aj} "burst"
-    1:2:3:2: PATMEMBER 0x555556a80d10 <e1413> {m41aj} @dt=0@
-    1:2:3:2:1: CONST 0x555556a6bd10 <e1410> {m41av} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:3:2:2: TEXT 0x555556a6f800 <e1412> {m41aj} "atomic"
-    1:2:3:2: PATMEMBER 0x555556a80dc0 <e1421> {m42aj} @dt=0@
-    1:2:3:2:1: CONST 0x555556a6be00 <e1418> {m42av} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2:3:2:2: TEXT 0x555556a6f8c0 <e1420> {m42aj} "data_width"
-    1:2:3:2: PATMEMBER 0x555556a80e70 <e1429> {m43aj} @dt=0@
-    1:2:3:2:1: CONST 0x555556a6bef0 <e1426> {m43av} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2:3:2:2: TEXT 0x555556a6f980 <e1428> {m43aj} "addr_width"
-    1:2: VAR 0x555556a6cc60 <e1447> {m45at} @dt=0@  BASE_ADDRESS [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1: BASICDTYPE 0x555556a6fbc0 <e1445> {m45ap} @dt=this@(sw32)  int kwd=int range=[31:0]
-    1:2:3: CONST 0x555556a820f0 <e1446> {m45bi} @dt=0x555556a6fb00@(G/w32)  32'h20000000
-    1:2: VAR 0x555556a6cd80 <e1977#> {m47cr} @dt=0@  clk INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a6fd40 <e1454> {m47an} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6cea0 <e1982#> {m48cr} @dt=0@  rst_n INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a6fec0 <e1462> {m48an} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6cfc0 <e1987#> {m49cr} @dt=0@  input_address INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a84240 <e1491> {m49an} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x555556a81130 <e1488> {m49at}
-    1:2:1:1:1: SUB 0x555556a811e0 <e1486> {m49bt} @dt=0@
-    1:2:1:1:1:1: MEMBERSEL 0x555556a888f0 <e2047#> {m49bi} @dt=0@  addr_width -> %E:UNLINKED
-    1:2:1:1:1:1:1: VARREF 0x555556a831d0 <e2042#> {m49au} @dt=0@  MODULE_CONFIG [RV] <- VAR 0x555556a6cb40 <e1434> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1:1:1:2: CONST 0x555556a823c0 <e1480> {m49bu} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:2: CONST 0x555556a824b0 <e1487> {m49by} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: VAR 0x555556a6d0e0 <e1992#> {m50cr} @dt=0@  addr_valid INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a84540 <e1507> {m50an} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6d200 <e1997#> {m51cr} @dt=0@  match OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a846c0 <e1516> {m51an} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6d320 <e2002#> {m52ct} @dt=0@  enables OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1: BASICDTYPE 0x555556a84b40 <e1557> {m52an} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x555556a81550 <e1554> {m52at}
-    1:2:1:1:1: COND 0x555556a81b80 <e2133#> {m17ay} @dt=0@
-    1:2:1:1:1:1: GT 0x555556a81c30 <e1281> {m17at} @dt=0x555556a3ca80@(G/w1)
-    1:2:1:1:1:1:1: ATTROF 0x555556a88a90 <e2125#> {m52ay} @dt=0@ [DIM_SIZE]
-    1:2:1:1:1:1:1:1: MEMBERSEL 0x555556a88b60 <e2058#> {m52bt} @dt=0@  cell_config -> %E:UNLINKED
-    1:2:1:1:1:1:1:1:1: SELBIT 0x555556a81ce0 <e2053#> {m52bp} @dt=0@
-    1:2:1:1:1:1:1:1:1:1: VARREF 0x555556a83d10 <e2050#> {m52be} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1384> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1:1:1:1:1:1:1:2: CONST 0x555556a83e00 <e1530> {m52bq} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:1:1:1:1:2: CONST 0x555556a83ef0 <e2127#> {m52ch} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:1:2: ATTROF 0x555556a88c30 <e2129#> {m52ay} @dt=0@ [DIM_SIZE]
-    1:2:1:1:1:2:1: MEMBERSEL 0x555556a88d00 <e2058#> {m52bt} @dt=0@  cell_config -> %E:UNLINKED
-    1:2:1:1:1:2:1:1: SELBIT 0x555556a81d90 <e2053#> {m52bp} @dt=0@
-    1:2:1:1:1:2:1:1:1: VARREF 0x555556a98000 <e2050#> {m52be} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1384> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1:1:1:2:1:1:2: CONST 0x555556a980f0 <e1530> {m52bq} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2:1:1:1:3: CONST 0x555556a981e0 <e2131#> {m52ch} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:2: CONST 0x555556a82a50 <e1553> {m52cm} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: ALWAYS 0x555556a81ad0 <e1613> {m55af} [always_ff]
-    1:2:1: SENTREE 0x555556a818c0 <e1941#> {m55ap}
-    1:2:1:1: SENITEM 0x555556a81760 <e1575> {m55ar} [POS]
-    1:2:1:1:1: VARREF 0x555556a833b0 <e2061#> {m55az} @dt=0@  clk [RV] <- VAR 0x555556a6cd80 <e1977#> {m47cr} @dt=0@  clk INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:1:1: SENITEM 0x555556a81810 <e1580> {m55bg} [NEG]
-    1:2:1:1:1: VARREF 0x555556a834a0 <e2064#> {m55bo} @dt=0@  rst_n [RV] <- VAR 0x555556a6cea0 <e1982#> {m48cr} @dt=0@  rst_n INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:2: BEGIN 0x555556a88680 <e1943#> {m55bv} [UNNAMED]
-    1:2:2:2: IF 0x555556a81a20 <e1606> {m57aj}
-    1:2:2:2:1: EQ 0x555556a81970 <e1607> {m57bb} @dt=0x555556a3ca80@(G/w1)
-    1:2:2:2:1:1: VARREF 0x555556a83590 <e2067#> {m57an} @dt=0@  input_address [RV] <- VAR 0x555556a6cfc0 <e1987#> {m49cr} @dt=0@  input_address INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:2:2:1:2: VARREF 0x555556a83680 <e2070#> {m57be} @dt=0@  BASE_ADDRESS [RV] <- VAR 0x555556a6cc60 <e1447> {m45at} @dt=0@  BASE_ADDRESS [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:2:2:2: BEGIN 0x555556a884e0 <e1596> {m57bs} [UNNAMED]
-    1:2:2:2:2:2: ASSIGNDLY 0x5555569c77c0 <e1593> {m58at} @dt=0@
-    1:2:2:2:2:2:1: CONST 0x555556a82b40 <e1594> {m58aw} @dt=0x555556a3ca80@(G/w1)  1'h1
-    1:2:2:2:2:2:2: VARREF 0x555556a83770 <e2073#> {m58an} @dt=0@  match [LV] => VAR 0x555556a6d200 <e1997#> {m51cr} @dt=0@  match OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1:2:2:2:3: BEGIN 0x555556a885b0 <e1605> {m59as} [UNNAMED]
-    1:2:2:2:3:2: ASSIGNDLY 0x5555569c7860 <e1602> {m60at} @dt=0@
-    1:2:2:2:3:2:1: CONST 0x555556a82c30 <e1603> {m60aw} @dt=0x555556a3ca80@(G/w1)  1'h0
-    1:2:2:2:3:2:2: VARREF 0x555556a83860 <e2076#> {m60an} @dt=0@  match [LV] => VAR 0x555556a6d200 <e1997#> {m51cr} @dt=0@  match OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
-    1: IFACE 0x555556a60500 <e1931> {f11al}  cell_interface  L2 D3 [LIB] [DEAD] [1ps]
-    1:2: VAR 0x5555569cbb00 <e1029> {f12at} @dt=0@  DATA_WIDTH [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1: BASICDTYPE 0x555556a63380 <e1030> {f12ap} @dt=this@(sw32)  int kwd=int range=[31:0]
-    1:2:3: CONST 0x555556a53c20 <e1031> {f12bg} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2: VAR 0x5555569cbc20 <e1043> {f13at} @dt=0@  ADDR_WIDTH [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
-    1:2:1: BASICDTYPE 0x555556a63500 <e1041> {f13ap} @dt=this@(sw32)  int kwd=int range=[31:0]
-    1:2:3: CONST 0x555556a53d10 <e1042> {f13bg} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2: VAR 0x5555569cbd40 <e1242> {f19bp} @dt=0@  atop [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a63680 <e1061> {f19af} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x5555569d54a0 <e1059> {f19al}
-    1:2:1:1:1: CONST 0x555556a6a000 <e1057> {f19am} @dt=0x555556a50a80@(G/swu32/3)  ?32?sh5
-    1:2:1:1:2: CONST 0x555556a6a0f0 <e1058> {f19ao} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: VAR 0x5555569cbe60 <e1071> {f20bp} @dt=0@  request [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a63800 <e1070> {f20af} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6c000 <e1078> {f21bp} @dt=0@  done [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a63980 <e1077> {f21af} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6c120 <e1085> {f22bp} @dt=0@  error [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a63b00 <e1084> {f22af} @dt=this@(w1)  logic kwd=logic
-    1:2: VAR 0x555556a6c240 <e1108> {f27bp} @dt=0@  addr [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a63d40 <e1107> {f27af} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x5555569d56b0 <e1103> {f27al}
-    1:2:1:1:1: SUB 0x5555569d5760 <e1101> {f27ax} @dt=0@
-    1:2:1:1:1:1: PARSEREF 0x555556a63e00 <e1094> {f27am} @dt=0@  ADDR_WIDTH
-    1:2:1:1:1:2: CONST 0x555556a6a3c0 <e1095> {f27az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:2: CONST 0x555556a6a4b0 <e1102> {f27bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: VAR 0x555556a6c360 <e1136> {f28bp} @dt=0@  data [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a6e0c0 <e1135> {f28af} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x5555569d5970 <e1126> {f28al}
-    1:2:1:1:1: SUB 0x5555569d5a20 <e1124> {f28ax} @dt=0@
-    1:2:1:1:1:1: PARSEREF 0x555556a6e180 <e1117> {f28am} @dt=0@  DATA_WIDTH
-    1:2:1:1:1:2: CONST 0x555556a6a780 <e1118> {f28az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:2: CONST 0x555556a6a870 <e1125> {f28bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: VAR 0x555556a6c480 <e1172> {f29bp} @dt=0@  byteen [P] [PRD] [PWR] [VSTATICI]  VAR
-    1:2:1: BASICDTYPE 0x555556a6e480 <e1171> {f29af} @dt=this@(w1)  logic kwd=logic
-    1:2:1:1: RANGE 0x5555569d5ce0 <e1162> {f29al}
-    1:2:1:1:1: SUB 0x5555569d5d90 <e1160> {f29bd} @dt=0@
-    1:2:1:1:1:1: DIV 0x5555569d5e40 <e1153> {f29ay} @dt=0@
-    1:2:1:1:1:1:1: PARSEREF 0x555556a6e540 <e1146> {f29an} @dt=0@  DATA_WIDTH
-    1:2:1:1:1:1:2: CONST 0x555556a6ac30 <e1147> {f29ba} @dt=0x555556a6e3c0@(G/swu32/4)  ?32?sh8
-    1:2:1:1:1:2: CONST 0x555556a6ad20 <e1154> {f29bf} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
-    1:2:1:1:2: CONST 0x555556a6ae10 <e1161> {f29bj} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
-    1:2: MODPORT 0x555556a6e600 <e1196> {f35an}  fsm_in
-    1:2:1: MODPORTVARREF 0x555556a324e0 <e1182> {f36ar}  atop OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a325b0 <e1184> {f37ar}  request OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32680 <e1186> {f38ar}  addr OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32750 <e1188> {f39ar}  data INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32820 <e1190> {f40ar}  byteen OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a328f0 <e1192> {f41ar}  done INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a329c0 <e1194> {f42ar}  error INPUT -> UNLINKED
-    1:2: MODPORT 0x555556a6e6c0 <e1211> {f45an}  fsm_out
-    1:2:1: MODPORTVARREF 0x555556a32a90 <e1197> {f46ar}  atop OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32b60 <e1199> {f47ar}  request OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32c30 <e1201> {f48ar}  addr OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32d00 <e1203> {f49ar}  data OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32dd0 <e1205> {f50ar}  byteen OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32ea0 <e1207> {f51ar}  done INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a32f70 <e1209> {f52ar}  error INPUT -> UNLINKED
-    1:2: MODPORT 0x555556a6e780 <e1226> {f58an}  cells_in
-    1:2:1: MODPORTVARREF 0x555556a33040 <e1212> {f59ar}  atop INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33110 <e1214> {f60ar}  request INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a331e0 <e1216> {f61ar}  addr INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a332b0 <e1218> {f62ar}  data OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33380 <e1220> {f63ar}  byteen INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33450 <e1222> {f64ar}  done OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33520 <e1224> {f65ar}  error OUTPUT -> UNLINKED
-    1:2: MODPORT 0x555556a6e840 <e1241> {f68an}  cells_out
-    1:2:1: MODPORTVARREF 0x555556a335f0 <e1227> {f69ar}  atop INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a336c0 <e1229> {f70ar}  request INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33790 <e1231> {f71ar}  addr INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33860 <e1233> {f72ar}  data INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33930 <e1235> {f73ar}  byteen INPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33a00 <e1237> {f74ar}  done OUTPUT -> UNLINKED
-    1:2:1: MODPORTVARREF 0x555556a33ad0 <e1239> {f75ar}  error OUTPUT -> UNLINKED
-    1: MODULE 0x555556a608c0 <e1932> {g11ai}  fifo_in  L2 D3 [DEAD] [1ps]
-    1: MODULE 0x555556a60dc0 <e1933> {h11ai}  fifo_out  L2 D3 [DEAD] [1ps]
-    1: MODULE 0x555556a61180 <e1934> {i11ai}  register_in  L2 D3 [DEAD] [1ps]
-    1: MODULE 0x555556a61540 <e1935> {j11ai}  register_out  L2 D3 [DEAD] [1ps]
-    1: MODULE 0x555556a61900 <e1936> {k11ai}  sram_in  L2 D3 [DEAD] [1ps]
-    1: MODULE 0x555556a61cc0 <e1937> {l11ai}  sram_out  L2 D3 [DEAD] [1ps]
-    1: PACKAGE 0x555556a7e140 <e1938> {a0aa}  __024unit  L2 D3 [LIB] [1ps]
-    1:2: PACKAGEIMPORT 0x555556a6af00 <e1255> {m12ai}  cell_config_t -> PACKAGE 0x5555569d1e00 <e1939#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
-    1:2: PACKAGEIMPORT 0x555556a6aff0 <e1259> {m13ai}  endpoint_config_t -> PACKAGE 0x5555569d1e00 <e1939#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
-    1:2: PACKAGEIMPORT 0x555556a6b0e0 <e1261> {m14ai}  cell_bus_t -> PACKAGE 0x5555569d1e00 <e1939#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
-    1: PACKAGE 0x5555569d1e00 <e1939#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
-    1:2: TYPEDEF 0x555556a531d0 <e884> {e27ah} @dt=0@  cell_type_t -> ENUMDTYPE 0x555556a60000 <e1954#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
-    1:2:1: ENUMDTYPE 0x555556a60000 <e1954#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
+    1: MODULE 0x555556a84280 <e2087> {m19ai}  address_decoder  L1 D2 [1ps]
+    1:2: VAR 0x555556a6ca20 <e1398> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1: BRACKETARRAYDTYPE 0x555556a86a50 <e1399> {m20bo} @dt=0@
+    1:2:1:1: REFDTYPE 0x555556a6ba40 <e1394> {m20ap} @dt=0@  cell_config_t cpkg=0x5555569d1e00 typedefp=0x555556a53860 -> STRUCTDTYPE 0x5555569d2ee0 <e2123#> {e47an} @dt=0@  bus_endpoint::cell_config_t
+    1:2:1:2: VARREF 0x555556a8bc20 <e2183#> {m20cd} @dt=0@  DEFAULT_REG_COUNT pkg=0x5555569d1e00 [RV] <- VAR 0x5555569cb9e0 <e1034> {e110aq} @dt=0@  DEFAULT_REG_COUNT [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
+    1:2:3: PATTERN 0x5555569c7680 <e1400> {m20cy} @dt=0@
+    1:2:3:2: PATMEMBER 0x555556a869a0 <e1390> {m21aj} @dt=0@ [DEFAULT]
+    1:2:3:2:1: PATTERN 0x5555569c75e0 <e1389> {m21as} @dt=0@
+    1:2:3:2:1:2: PATMEMBER 0x555556a86210 <e1318> {m22an} @dt=0@
+    1:2:3:2:1:2:1: ENUMITEMREF 0x555556a8ec30 <e2189#> {m22br} @dt=0@  TYPE_REG_OUT -> ENUMITEM 0x555556a5b980 <e869> {e21aj} @dt=0@  TYPE_REG_OUT
+    1:2:3:2:1:2:2: TEXT 0x555556a6f140 <e1319> {m22an} "cell_type"
+    1:2:3:2:1:2: PATMEMBER 0x555556a862c0 <e1327> {m23an} @dt=0@
+    1:2:3:2:1:2:1: CONST 0x555556a6b2c0 <e1324> {m23bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:2: TEXT 0x555556a6f2c0 <e1326> {m23an} "offset"
+    1:2:3:2:1:2: PATMEMBER 0x555556a86370 <e1335> {m24an} @dt=0@
+    1:2:3:2:1:2:1: CONST 0x555556a6b3b0 <e1332> {m24bd} @dt=0x555556a50a80@(G/swu32/3)  ?32?sh4
+    1:2:3:2:1:2:2: TEXT 0x555556a6f380 <e1334> {m24an} "size"
+    1:2:3:2:1:2: PATMEMBER 0x555556a86420 <e1343> {m25an} @dt=0@
+    1:2:3:2:1:2:1: CONST 0x555556a6b4a0 <e1340> {m25bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:2: TEXT 0x555556a6f440 <e1342> {m25an} "mem_size"
+    1:2:3:2:1:2: PATMEMBER 0x555556a868f0 <e1388> {m26an} @dt=0@
+    1:2:3:2:1:2:1: PATTERN 0x5555569c7540 <e1385> {m26ba} @dt=0@
+    1:2:3:2:1:2:1:2: PATMEMBER 0x555556a86630 <e1365> {m27ar} @dt=0@
+    1:2:3:2:1:2:1:2:1: PATTERN 0x5555569c7400 <e1364> {m27au} @dt=0@
+    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a864d0 <e1354> {m28av} @dt=0@
+    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b680 <e1353> {m28bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f5c0 <e1355> {m28av} "bit_offset"
+    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a86580 <e1363> {m29av} @dt=0@
+    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b770 <e1360> {m29bh} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
+    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f680 <e1362> {m29av} "bit_width"
+    1:2:3:2:1:2:1:2:2: CONST 0x555556a6b590 <e1366> {m27ar} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:1:2: PATMEMBER 0x555556a86840 <e1384> {m31ar} @dt=0@ [DEFAULT]
+    1:2:3:2:1:2:1:2:1: PATTERN 0x5555569c74a0 <e1382> {m31ba} @dt=0@
+    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a866e0 <e1372> {m32av} @dt=0@
+    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b860 <e1371> {m32bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f740 <e1373> {m32av} "bit_offset"
+    1:2:3:2:1:2:1:2:1:2: PATMEMBER 0x555556a86790 <e1381> {m33av} @dt=0@
+    1:2:3:2:1:2:1:2:1:2:1: CONST 0x555556a6b950 <e1378> {m33bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:1:2:1:2:1:2:2: TEXT 0x555556a6f800 <e1380> {m33av} "bit_width"
+    1:2:3:2:1:2:2: TEXT 0x555556a6f500 <e1387> {m26an} "cell_config"
+    1:2: VAR 0x555556a6cb40 <e1465> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1: REFDTYPE 0x555556a8a1e0 <e1463> {m38ap} @dt=0@  endpoint_config_t cpkg=0x5555569d1e00 typedefp=0x555556a53a40 -> STRUCTDTYPE 0x5555569d3180 <e2133#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
+    1:2:3: PATTERN 0x5555569c7720 <e1464> {m38bx} @dt=0@
+    1:2:3:2: PATMEMBER 0x555556a86bb0 <e1410> {m39aj} @dt=0@
+    1:2:3:2:1: ENUMITEMREF 0x555556a8ed00 <e2195#> {m39bn} @dt=0@  BUS_AXI_LITE -> ENUMITEM 0x555556a62840 <e960> {e60aj} @dt=0@  BUS_AXI_LITE
+    1:2:3:2:2: TEXT 0x555556a6f8c0 <e1411> {m39aj} "bus"
+    1:2:3:2: PATMEMBER 0x555556a86c60 <e1419> {m40aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a6bc20 <e1416> {m40az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:2: TEXT 0x555556a6fa40 <e1418> {m40aj} "burst"
+    1:2:3:2: PATMEMBER 0x555556a86d10 <e1427> {m41aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a6bd10 <e1424> {m41az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:3:2:2: TEXT 0x555556a6fb00 <e1426> {m41aj} "atomic"
+    1:2:3:2: PATMEMBER 0x555556a86dc0 <e1435> {m42aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a6be00 <e1432> {m42az} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
+    1:2:3:2:2: TEXT 0x555556a6fbc0 <e1434> {m42aj} "data_width"
+    1:2:3:2: PATMEMBER 0x555556a86e70 <e1443> {m43aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a6bef0 <e1440> {m43az} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
+    1:2:3:2:2: TEXT 0x555556a6fc80 <e1442> {m43aj} "addr_width"
+    1:2:3:2: PATMEMBER 0x555556a86f20 <e1452> {m44aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a8a000 <e1449> {m44az} @dt=0x555556a6fe00@(G/swu32/5)  ?32?sh14
+    1:2:3:2:2: TEXT 0x555556a6fd40 <e1451> {m44aj} "prefix_size"
+    1:2:3:2: PATMEMBER 0x555556a86fd0 <e1460> {m45aj} @dt=0@
+    1:2:3:2:1: CONST 0x555556a8a0f0 <e1457> {m45az} @dt=0x555556a6e6c0@(G/swu32/4)  ?32?shc
+    1:2:3:2:2: TEXT 0x555556a6fec0 <e1459> {m45aj} "suffix_size"
+    1:2: VAR 0x555556a6cc60 <e1478> {m47at} @dt=0@  BASE_ADDRESS [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1: BASICDTYPE 0x555556a8c180 <e1476> {m47ap} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2:3: CONST 0x555556a8a2d0 <e1477> {m47bi} @dt=0x555556a8c0c0@(G/w32)  32'h20000002
+    1:2: VAR 0x555556a6cd80 <e2136#> {m49cr} @dt=0@  clk INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8c300 <e1485> {m49an} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6cea0 <e2141#> {m50cr} @dt=0@  rst_n INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8c480 <e1493> {m50an} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6cfc0 <e2146#> {m51cr} @dt=0@  input_address INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8c780 <e1522> {m51an} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x555556a87290 <e1519> {m51at}
+    1:2:1:1:1: SUB 0x555556a87340 <e1517> {m51bt} @dt=0@
+    1:2:1:1:1:1: MEMBERSEL 0x555556a8edd0 <e2206#> {m51bi} @dt=0@  addr_width -> %E:UNLINKED
+    1:2:1:1:1:1:1: VARREF 0x555556a8bd10 <e2201#> {m51au} @dt=0@  MODULE_CONFIG [RV] <- VAR 0x555556a6cb40 <e1465> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:1:1:2: CONST 0x555556a8a5a0 <e1511> {m51bu} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:2: CONST 0x555556a8a690 <e1518> {m51by} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: VAR 0x555556a6d0e0 <e2151#> {m52cr} @dt=0@  addr_valid INPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8ca80 <e1538> {m52an} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6d200 <e2156#> {m53cr} @dt=0@  match OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8cc00 <e1547> {m53an} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6d320 <e2161#> {m54cr} @dt=0@  enables OUTPUT [P] [PRD] [PWR] [VSTATICI]  PORT
+    1:2:1: BASICDTYPE 0x555556a8d080 <e1588> {m54an} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x555556a876b0 <e1585> {m54at}
+    1:2:1:1:1: COND 0x555556a90630 <e2376#> {m17ay} @dt=0@
+    1:2:1:1:1:1: GT 0x555556a906e0 <e1295> {m17at} @dt=0x555556a3ca80@(G/w1)
+    1:2:1:1:1:1:1: ATTROF 0x555556a8f2b0 <e2368#> {m54ay} @dt=0@ [DIM_SIZE]
+    1:2:1:1:1:1:1:1: MEMBERSEL 0x555556a8f380 <e2217#> {m54bt} @dt=0@  cell_config -> %E:UNLINKED
+    1:2:1:1:1:1:1:1:1: SELBIT 0x555556a90790 <e2212#> {m54bp} @dt=0@
+    1:2:1:1:1:1:1:1:1:1: VARREF 0x555556aa8f00 <e2209#> {m54be} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1398> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:1:1:1:1:1:1:2: CONST 0x555556aa8ff0 <e1561> {m54bq} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:1:1:1:1:2: CONST 0x555556aa90e0 <e2370#> {m54ch} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:1:2: ATTROF 0x555556a8f450 <e2372#> {m54ay} @dt=0@ [DIM_SIZE]
+    1:2:1:1:1:2:1: MEMBERSEL 0x555556a8f520 <e2217#> {m54bt} @dt=0@  cell_config -> %E:UNLINKED
+    1:2:1:1:1:2:1:1: SELBIT 0x555556a90840 <e2212#> {m54bp} @dt=0@
+    1:2:1:1:1:2:1:1:1: VARREF 0x555556aa91d0 <e2209#> {m54be} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1398> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:1:1:2:1:1:2: CONST 0x555556aa92c0 <e1561> {m54bq} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:1:1:1:3: CONST 0x555556aa93b0 <e2374#> {m54ch} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:2: CONST 0x555556a8ac30 <e1584> {m54cm} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: GENIF 0x5555569c77c0 <e1777> {m61aj}
+    1:2:1: NEQ 0x555556a87970 <e1639> {m61bk} @dt=0x555556a3ca80@(G/w1)
+    1:2:1:1: AND 0x555556a878c0 <e1618> {m61bb} @dt=0@
+    1:2:1:1:1: VARREF 0x555556a8bef0 <e2220#> {m61ao} @dt=0@  BASE_ADDRESS [RV] <- VAR 0x555556a6cc60 <e1478> {m47at} @dt=0@  BASE_ADDRESS [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:1:2: CONST 0x555556a8ad20 <e1612> {m61bd} @dt=0x555556a8c0c0@(G/w32)  32'h3
+    1:2:1:2: CONST 0x555556a8ae10 <e1619> {m61bn} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:2: GENBLOCK 0x555556a8e5b0 <e1637> {m61bx}  is_address_aligned
+    1:2:2:2: INITIAL 0x555556a87ad0 <e1636> {m62an}
+    1:2:2:2:2: ELABDISPLAY 0x555556a87a20 <e1631> {m62an}
+    1:2:2:2:2:1: SFORMATF 0x555556a8e4e0 <e1633> {m62an} @dt=0x555556a51140@(G/str)  Base address is not aligned with a 4 byte boundary.
+    1:2: GENIF 0x5555569c7860 <e1680> {m65aj}
+    1:2:1: NEQ 0x555556a87e40 <e1679> {m65cr} @dt=0x555556a3ca80@(G/w1)
+    1:2:1:1: ADD 0x555556a87ce0 <e1659> {m65bo} @dt=0@
+    1:2:1:1:1: MEMBERSEL 0x555556a8ef70 <e2231#> {m65bc} @dt=0@  prefix_size -> %E:UNLINKED
+    1:2:1:1:1:1: VARREF 0x555556aa8000 <e2226#> {m65ao} @dt=0@  MODULE_CONFIG [RV] <- VAR 0x555556a6cb40 <e1465> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:1:2: MEMBERSEL 0x555556a8f040 <e2242#> {m65ce} @dt=0@  suffix_size -> %E:UNLINKED
+    1:2:1:1:2:1: VARREF 0x555556aa80f0 <e2237#> {m65bq} @dt=0@  MODULE_CONFIG [RV] <- VAR 0x555556a6cb40 <e1465> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:2: MEMBERSEL 0x555556a8f110 <e2253#> {m65di} @dt=0@  addr_width -> %E:UNLINKED
+    1:2:1:2:1: VARREF 0x555556aa81e0 <e2248#> {m65cu} @dt=0@  MODULE_CONFIG [RV] <- VAR 0x555556a6cb40 <e1465> {m38bh} @dt=0@  MODULE_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:2: GENBLOCK 0x555556a8e750 <e1677> {m65eb}  is_address_configured
+    1:2:2:2: INITIAL 0x555556a90000 <e1676> {m66an}
+    1:2:2:2:2: ELABDISPLAY 0x555556a87ef0 <e1671> {m66an}
+    1:2:2:2:2:1: SFORMATF 0x555556a8e680 <e1673> {m66an} @dt=0x555556a51140@(G/str)  Sum of prefix and suffix of the address does not match the address size.
+    1:2: VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1: BASICDTYPE 0x555556a8dc80 <e1684> {m70am} @dt=this@(sw32)  integer kwd=integer range=[31:0]
+    1:2: GENBLOCK 0x555556a8eb60 <e1775> {m71ao}  genblk3 [IMPLIED] [UNNAMED]
+    1:2:1: GENFOR 0x5555569c7ae0 <e1772> {m71ao}
+    1:2:1:1: ASSIGN 0x5555569c7900 <e1691> {m71az} @dt=0@
+    1:2:1:1:1: CONST 0x555556a8b2c0 <e1692> {m71bb} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:1:1:2: VARREF 0x555556aa82d0 <e2256#> {m71at} @dt=0@  index [LV] => VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1:2: LT 0x555556a900b0 <e1771> {m71bk} @dt=0x555556a3ca80@(G/w1)
+    1:2:1:2:1: VARREF 0x555556aa83c0 <e2259#> {m71be} @dt=0@  index [RV] <- VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1:2:2: ATTROF 0x555556a8e820 <e1700> {m71bm} @dt=0@ [DIM_SIZE]
+    1:2:1:2:2:1: VARREF 0x555556aa84b0 <e2262#> {m71bs} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1398> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:3: ASSIGN 0x5555569c79a0 <e1711> {m71cl} @dt=0@
+    1:2:1:3:1: ADD 0x555556a90160 <e1712> {m71cl} @dt=0@
+    1:2:1:3:1:1: VARREF 0x555556aa85a0 <e2265#> {m71cg} @dt=0@  index [RV] <- VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1:3:1:2: CONST 0x555556a8b3b0 <e1710> {m71cl} @dt=0x555556a92180@(G/wu32/1)  ?32?h1
+    1:2:1:3:2: VARREF 0x555556aa8690 <e2268#> {m71cg} @dt=0@  index [LV] => VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1:4: VAR 0x555556a6d560 <e1768> {m73ay} @dt=0@  CURRENT_ADDR [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
+    1:2:1:4:1: BASICDTYPE 0x555556a92540 <e1735> {m73au} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2:1:4:3: AND 0x555556a90370 <e1736> {m73co} @dt=0@
+    1:2:1:4:3:1: MEMBERSEL 0x555556a8f1e0 <e2282#> {m73ch} @dt=0@  offset -> %E:UNLINKED
+    1:2:1:4:3:1:1: SELBIT 0x555556a90210 <e2277#> {m73bz} @dt=0@
+    1:2:1:4:3:1:1:1: VARREF 0x555556aa8780 <e2271#> {m73bo} @dt=0@  CELL_CONFIG [RV] <- VAR 0x555556a6ca20 <e1398> {m20bd} @dt=0@  CELL_CONFIG [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1:4:3:1:1:2: VARREF 0x555556aa8870 <e2274#> {m73ca} @dt=0@  index [RV] <- VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1:2:1:4:3:2: CONST 0x555556a8b4a0 <e1733> {m73cq} @dt=0x555556a8c0c0@(G/w32)  32'h3
+    1:2:1:4: GENIF 0x5555569c7a40 <e1766> {m75an}
+    1:2:1:4:1: NEQ 0x555556a90420 <e1765> {m75be} @dt=0x555556a3ca80@(G/w1)
+    1:2:1:4:1:1: VARREF 0x555556aa8960 <e2285#> {m75ar} @dt=0@  CURRENT_ADDR [RV] <- VAR 0x555556a6d560 <e1768> {m73ay} @dt=0@  CURRENT_ADDR [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
+    1:2:1:4:1:2: CONST 0x555556a8b590 <e1744> {m75bh} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2:1:4:2: GENBLOCK 0x555556a8e9c0 <e1763> {m75br}  is_offset_aligned
+    1:2:1:4:2:2: INITIAL 0x555556a90580 <e1762> {m76ar}
+    1:2:1:4:2:2:2: ELABDISPLAY 0x555556a904d0 <e1757> {m76ar}
+    1:2:1:4:2:2:2:1: SFORMATF 0x555556a8e8f0 <e1759> {m76ar} @dt=0x555556a51140@(G/str)  Cell config at index 0x%0h is not aligned with a 4 byte boundary.
+    1:2:1:4:2:2:2:1:1: VARREF 0x555556aa8a50 <e2289#> {m76dv} @dt=0@  index [RV] <- VAR 0x555556a6d440 <e1685> {m70am} @dt=0@  index [VSTATICI]  GENVAR
+    1: IFACE 0x555556a60500 <e2097> {f11al}  cell_interface  L2 D3 [LIB] [DEAD] [1ps]
+    1:2: VAR 0x5555569cbb00 <e1043> {f12at} @dt=0@  DATA_WIDTH [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1: BASICDTYPE 0x555556a63680 <e1044> {f12ap} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2:3: CONST 0x555556a53c20 <e1045> {f12bg} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
+    1:2: VAR 0x5555569cbc20 <e1057> {f13at} @dt=0@  ADDR_WIDTH [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  GPARAM
+    1:2:1: BASICDTYPE 0x555556a63800 <e1055> {f13ap} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2:3: CONST 0x555556a53d10 <e1056> {f13bg} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
+    1:2: VAR 0x5555569cbd40 <e1256> {f19bp} @dt=0@  atop [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a63980 <e1075> {f19af} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x5555569d54a0 <e1073> {f19al}
+    1:2:1:1:1: CONST 0x555556a6a000 <e1071> {f19am} @dt=0x555556a50a80@(G/swu32/3)  ?32?sh5
+    1:2:1:1:2: CONST 0x555556a6a0f0 <e1072> {f19ao} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: VAR 0x5555569cbe60 <e1085> {f20bp} @dt=0@  request [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a63b00 <e1084> {f20af} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6c000 <e1092> {f21bp} @dt=0@  done [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a63c80 <e1091> {f21af} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6c120 <e1099> {f22bp} @dt=0@  error [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a63e00 <e1098> {f22af} @dt=this@(w1)  logic kwd=logic
+    1:2: VAR 0x555556a6c240 <e1122> {f27bp} @dt=0@  addr [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a6e0c0 <e1121> {f27af} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x5555569d56b0 <e1117> {f27al}
+    1:2:1:1:1: SUB 0x5555569d5760 <e1115> {f27ax} @dt=0@
+    1:2:1:1:1:1: PARSEREF 0x555556a6e180 <e1108> {f27am} @dt=0@  ADDR_WIDTH
+    1:2:1:1:1:2: CONST 0x555556a6a3c0 <e1109> {f27az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:2: CONST 0x555556a6a4b0 <e1116> {f27bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: VAR 0x555556a6c360 <e1150> {f28bp} @dt=0@  data [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a6e3c0 <e1149> {f28af} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x5555569d5970 <e1140> {f28al}
+    1:2:1:1:1: SUB 0x5555569d5a20 <e1138> {f28ax} @dt=0@
+    1:2:1:1:1:1: PARSEREF 0x555556a6e480 <e1131> {f28am} @dt=0@  DATA_WIDTH
+    1:2:1:1:1:2: CONST 0x555556a6a780 <e1132> {f28az} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:2: CONST 0x555556a6a870 <e1139> {f28bd} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: VAR 0x555556a6c480 <e1186> {f29bp} @dt=0@  byteen [P] [PRD] [PWR] [VSTATICI]  VAR
+    1:2:1: BASICDTYPE 0x555556a6e780 <e1185> {f29af} @dt=this@(w1)  logic kwd=logic
+    1:2:1:1: RANGE 0x5555569d5ce0 <e1176> {f29al}
+    1:2:1:1:1: SUB 0x5555569d5d90 <e1174> {f29bd} @dt=0@
+    1:2:1:1:1:1: DIV 0x5555569d5e40 <e1167> {f29ay} @dt=0@
+    1:2:1:1:1:1:1: PARSEREF 0x555556a6e840 <e1160> {f29an} @dt=0@  DATA_WIDTH
+    1:2:1:1:1:1:2: CONST 0x555556a6ac30 <e1161> {f29ba} @dt=0x555556a6e6c0@(G/swu32/4)  ?32?sh8
+    1:2:1:1:1:2: CONST 0x555556a6ad20 <e1168> {f29bf} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh1
+    1:2:1:1:2: CONST 0x555556a6ae10 <e1175> {f29bj} @dt=0x555556a3c3c0@(G/swu32/1)  ?32?sh0
+    1:2: MODPORT 0x555556a6e900 <e1210> {f35an}  fsm_in
+    1:2:1: MODPORTVARREF 0x555556a124e0 <e1196> {f36ar}  atop OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a125b0 <e1198> {f37ar}  request OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12680 <e1200> {f38ar}  addr OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12750 <e1202> {f39ar}  data INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12820 <e1204> {f40ar}  byteen OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a128f0 <e1206> {f41ar}  done INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a129c0 <e1208> {f42ar}  error INPUT -> UNLINKED
+    1:2: MODPORT 0x555556a6e9c0 <e1225> {f45an}  fsm_out
+    1:2:1: MODPORTVARREF 0x555556a12a90 <e1211> {f46ar}  atop OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12b60 <e1213> {f47ar}  request OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12c30 <e1215> {f48ar}  addr OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12d00 <e1217> {f49ar}  data OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12dd0 <e1219> {f50ar}  byteen OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12ea0 <e1221> {f51ar}  done INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a12f70 <e1223> {f52ar}  error INPUT -> UNLINKED
+    1:2: MODPORT 0x555556a6ea80 <e1240> {f58an}  cells_in
+    1:2:1: MODPORTVARREF 0x555556a13040 <e1226> {f59ar}  atop INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13110 <e1228> {f60ar}  request INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a131e0 <e1230> {f61ar}  addr INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a132b0 <e1232> {f62ar}  data OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13380 <e1234> {f63ar}  byteen INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13450 <e1236> {f64ar}  done OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13520 <e1238> {f65ar}  error OUTPUT -> UNLINKED
+    1:2: MODPORT 0x555556a6eb40 <e1255> {f68an}  cells_out
+    1:2:1: MODPORTVARREF 0x555556a135f0 <e1241> {f69ar}  atop INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a136c0 <e1243> {f70ar}  request INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13790 <e1245> {f71ar}  addr INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13860 <e1247> {f72ar}  data INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13930 <e1249> {f73ar}  byteen INPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13a00 <e1251> {f74ar}  done OUTPUT -> UNLINKED
+    1:2:1: MODPORTVARREF 0x555556a13ad0 <e1253> {f75ar}  error OUTPUT -> UNLINKED
+    1: MODULE 0x555556a608c0 <e2098> {g11ai}  fifo_in  L2 D3 [DEAD] [1ps]
+    1: MODULE 0x555556a60dc0 <e2099> {h11ai}  fifo_out  L2 D3 [DEAD] [1ps]
+    1: MODULE 0x555556a61180 <e2100> {i11ai}  register_in  L2 D3 [DEAD] [1ps]
+    1: MODULE 0x555556a61540 <e2101> {j11ai}  register_out  L2 D3 [DEAD] [1ps]
+    1: MODULE 0x555556a61900 <e2102> {k11ai}  sram_in  L2 D3 [DEAD] [1ps]
+    1: MODULE 0x555556a61cc0 <e2103> {l11ai}  sram_out  L2 D3 [DEAD] [1ps]
+    1: PACKAGE 0x555556a84140 <e2104> {a0aa}  __024unit  L2 D3 [LIB] [1ps]
+    1:2: PACKAGEIMPORT 0x555556a6af00 <e1269> {m12ai}  cell_config_t -> PACKAGE 0x5555569d1e00 <e2105#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
+    1:2: PACKAGEIMPORT 0x555556a6aff0 <e1273> {m13ai}  endpoint_config_t -> PACKAGE 0x5555569d1e00 <e2105#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
+    1:2: PACKAGEIMPORT 0x555556a6b0e0 <e1275> {m14ai}  cell_bus_t -> PACKAGE 0x5555569d1e00 <e2105#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
+    1: PACKAGE 0x5555569d1e00 <e2105#> {e14aj}  bus_endpoint  L3 D3 [LIB] [1ps]
+    1:2: TYPEDEF 0x555556a531d0 <e884> {e27ah} @dt=0@  cell_type_t -> ENUMDTYPE 0x555556a60000 <e2113#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
+    1:2:1: ENUMDTYPE 0x555556a60000 <e2113#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
     1:2:1:1: BASICDTYPE 0x555556a3c000 <e881> {e19as} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:2: ENUMITEM 0x555556a5b8c0 <e867> {e20aj} @dt=0@  TYPE_REG_IN
     1:2:1:2: ENUMITEM 0x555556a5b980 <e869> {e21aj} @dt=0@  TYPE_REG_OUT
@@ -208,16 +251,16 @@ Verilator Tree Dump (format 0x3900) from <e1939> to <e2165>
     1:2:1:2: ENUMITEM 0x555556a5bbc0 <e875> {e24aj} @dt=0@  TYPE_SRAM_IN
     1:2:1:2: ENUMITEM 0x555556a5bc80 <e877> {e25aj} @dt=0@  TYPE_SRAM_OUT
     1:2:1:2: ENUMITEM 0x555556a5bd40 <e879> {e26aj} @dt=0@  TYPE_IRQ
-    1:2: TYPEDEF 0x555556a532c0 <e904> {e35ah} @dt=0@  field_config_t -> STRUCTDTYPE 0x5555569d2d20 <e1959#> {e32an} @dt=0@  bus_endpoint::field_config_t
-    1:2:1: STRUCTDTYPE 0x5555569d2d20 <e1959#> {e32an} @dt=0@  bus_endpoint::field_config_t
+    1:2: TYPEDEF 0x555556a532c0 <e904> {e35ah} @dt=0@  field_config_t -> STRUCTDTYPE 0x5555569d2d20 <e2118#> {e32an} @dt=0@  bus_endpoint::field_config_t
+    1:2:1: STRUCTDTYPE 0x5555569d2d20 <e2118#> {e32an} @dt=0@  bus_endpoint::field_config_t
     1:2:1:1: MEMBERDTYPE 0x555556a59c00 <e889> {e33an} @dt=0@  bit_offset name=bit_offset
     1:2:1:1:1: BASICDTYPE 0x555556a5bec0 <e890> {e33aj} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:1: MEMBERDTYPE 0x555556a59d00 <e899> {e34an} @dt=0@  bit_width name=bit_width
     1:2:1:1:1: BASICDTYPE 0x555556a620c0 <e896> {e34aj} @dt=this@(sw32)  int kwd=int range=[31:0]
-    1:2: TYPEDEF 0x555556a53860 <e955> {e53ah} @dt=0@  cell_config_t -> STRUCTDTYPE 0x5555569d2ee0 <e1964#> {e47an} @dt=0@  bus_endpoint::cell_config_t
-    1:2:1: STRUCTDTYPE 0x5555569d2ee0 <e1964#> {e47an} @dt=0@  bus_endpoint::cell_config_t
+    1:2: TYPEDEF 0x555556a53860 <e955> {e53ah} @dt=0@  cell_config_t -> STRUCTDTYPE 0x5555569d2ee0 <e2123#> {e47an} @dt=0@  bus_endpoint::cell_config_t
+    1:2:1: STRUCTDTYPE 0x5555569d2ee0 <e2123#> {e47an} @dt=0@  bus_endpoint::cell_config_t
     1:2:1:1: MEMBERDTYPE 0x555556a59e00 <e907> {e48av} @dt=0@  cell_type name=cell_type
-    1:2:1:1:1: REFDTYPE 0x555556a534a0 <e908> {e48aj} @dt=0@  cell_type_t cpkg=0x5555569d1e00 typedefp=0x555556a531d0 -> ENUMDTYPE 0x555556a60000 <e1954#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
+    1:2:1:1:1: REFDTYPE 0x555556a534a0 <e908> {e48aj} @dt=0@  cell_type_t cpkg=0x5555569d1e00 typedefp=0x555556a531d0 -> ENUMDTYPE 0x555556a60000 <e2113#> {e19an} @dt=0@  bus_endpoint::cell_type_t enum
     1:2:1:1: MEMBERDTYPE 0x555556a59f00 <e917> {e49an} @dt=0@  offset name=offset
     1:2:1:1:1: BASICDTYPE 0x555556a62240 <e914> {e49aj} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:1: MEMBERDTYPE 0x555556a64000 <e924> {e50an} @dt=0@  size name=size
@@ -226,16 +269,16 @@ Verilator Tree Dump (format 0x3900) from <e1939> to <e2165>
     1:2:1:1:1: BASICDTYPE 0x555556a62540 <e928> {e51aj} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:1: MEMBERDTYPE 0x555556a64200 <e950> {e52ay} @dt=0@  cell_config name=cell_config
     1:2:1:1:1: BRACKETARRAYDTYPE 0x5555569d5340 <e947> {e52bj} @dt=0@
-    1:2:1:1:1:1: REFDTYPE 0x555556a53770 <e942> {e52aj} @dt=0@  field_config_t cpkg=0x5555569d1e00 typedefp=0x555556a532c0 -> STRUCTDTYPE 0x5555569d2d20 <e1959#> {e32an} @dt=0@  bus_endpoint::field_config_t
+    1:2:1:1:1:1: REFDTYPE 0x555556a53770 <e942> {e52aj} @dt=0@  field_config_t cpkg=0x5555569d1e00 typedefp=0x555556a532c0 -> STRUCTDTYPE 0x5555569d2d20 <e2118#> {e32an} @dt=0@  bus_endpoint::field_config_t
     1:2:1:1:1:2: CONST 0x555556a53680 <e943> {e52bk} @dt=0x555556a62600@(G/swu32/6)  ?32?sh20
-    1:2: TYPEDEF 0x555556a53950 <e969> {e62ah} @dt=0@  cell_bus_t -> ENUMDTYPE 0x555556a60140 <e1969#> {e58an} @dt=0@  bus_endpoint::cell_bus_t enum
-    1:2:1: ENUMDTYPE 0x555556a60140 <e1969#> {e58an} @dt=0@  bus_endpoint::cell_bus_t enum
+    1:2: TYPEDEF 0x555556a53950 <e969> {e62ah} @dt=0@  cell_bus_t -> ENUMDTYPE 0x555556a60140 <e2128#> {e58an} @dt=0@  bus_endpoint::cell_bus_t enum
+    1:2:1: ENUMDTYPE 0x555556a60140 <e2128#> {e58an} @dt=0@  bus_endpoint::cell_bus_t enum
     1:2:1:1: BASICDTYPE 0x555556a626c0 <e964> {e58as} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:2: ENUMITEM 0x555556a62780 <e958> {e59aj} @dt=0@  BUS_AVALON
     1:2:1:2: ENUMITEM 0x555556a62840 <e960> {e60aj} @dt=0@  BUS_AXI_LITE
     1:2:1:2: ENUMITEM 0x555556a62900 <e962> {e61aj} @dt=0@  BUS_AXI
-    1:2: TYPEDEF 0x555556a53a40 <e1009> {e73ah} @dt=0@  endpoint_config_t -> STRUCTDTYPE 0x5555569d3180 <e1974#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
-    1:2:1: STRUCTDTYPE 0x5555569d3180 <e1974#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
+    1:2: TYPEDEF 0x555556a53a40 <e1023> {e75ah} @dt=0@  endpoint_config_t -> STRUCTDTYPE 0x5555569d3180 <e2133#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
+    1:2:1: STRUCTDTYPE 0x5555569d3180 <e2133#> {e67an} @dt=0@  bus_endpoint::endpoint_config_t
     1:2:1:1: MEMBERDTYPE 0x555556a64300 <e973> {e68av} @dt=0@  bus name=bus
     1:2:1:1:1: BASICDTYPE 0x555556a62a80 <e974> {e68aj} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:1: MEMBERDTYPE 0x555556a64400 <e983> {e69av} @dt=0@  burst name=burst
@@ -246,24 +289,34 @@ Verilator Tree Dump (format 0x3900) from <e1939> to <e2165>
     1:2:1:1:1: BASICDTYPE 0x555556a62f00 <e994> {e71aj} @dt=this@(sw32)  int kwd=int range=[31:0]
     1:2:1:1: MEMBERDTYPE 0x555556a64700 <e1004> {e72av} @dt=0@  addr_width name=addr_width
     1:2:1:1:1: BASICDTYPE 0x555556a63080 <e1001> {e72aj} @dt=this@(sw32)  int kwd=int range=[31:0]
-    1:2: VAR 0x5555569cb9e0 <e1020> {e108aq} @dt=0@  DEFAULT_REG_COUNT [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
-    1:2:1: BASICDTYPE 0x555556a63200 <e1018> {e108aq} @dt=this@(nw0)  LOGIC_IMPLICIT kwd=LOGIC_IMPLICIT
-    1:2:3: CONST 0x555556a53b30 <e1019> {e108bk} @dt=0x555556a63140@(G/swu32/7)  ?32?sh40
+    1:2:1:1: MEMBERDTYPE 0x555556a64800 <e1011> {e73av} @dt=0@  prefix_size name=prefix_size
+    1:2:1:1:1: BASICDTYPE 0x555556a63200 <e1008> {e73aj} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2:1:1: MEMBERDTYPE 0x555556a64900 <e1018> {e74av} @dt=0@  suffix_size name=suffix_size
+    1:2:1:1:1: BASICDTYPE 0x555556a63380 <e1015> {e74aj} @dt=this@(sw32)  int kwd=int range=[31:0]
+    1:2: VAR 0x5555569cb9e0 <e1034> {e110aq} @dt=0@  DEFAULT_REG_COUNT [CONST] [P] [PRD] [PWR] [UINIT] [VSTATICI]  LPARAM
+    1:2:1: BASICDTYPE 0x555556a63500 <e1032> {e110aq} @dt=this@(nw0)  LOGIC_IMPLICIT kwd=LOGIC_IMPLICIT
+    1:2:3: CONST 0x555556a53b30 <e1033> {e110bk} @dt=0x555556a63440@(G/swu32/7)  ?32?sh40
     3: TYPETABLE 0x5555569c0600 <e2> {a0aa}
 		 integer  -> BASICDTYPE 0x555556a3c240 <e26> {d38az} @dt=this@(G/sw32)  integer [GENERIC] kwd=integer range=[31:0]
 		   logic  -> BASICDTYPE 0x555556a3ca80 <e102> {d57at} @dt=this@(G/w1)  logic [GENERIC] kwd=logic
 		  string  -> BASICDTYPE 0x555556a51140 <e479> {d169ah} @dt=this@(G/str)  string [GENERIC] kwd=string
 		detailed  ->  BASICDTYPE 0x555556a3ca80 <e102> {d57at} @dt=this@(G/w1)  logic [GENERIC] kwd=logic
+		detailed  ->  BASICDTYPE 0x555556a92180 <e1706> {m71cl} @dt=this@(G/wu32/1)  logic [GENERIC] kwd=logic range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a3c3c0 <e47> {d40be} @dt=this@(G/swu32/1)  logic [GENERIC] kwd=logic range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a50840 <e398> {d134ar} @dt=this@(G/swu32/2)  logic [GENERIC] kwd=logic range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a50a80 <e413> {d136aq} @dt=this@(G/swu32/3)  logic [GENERIC] kwd=logic range=[31:0]
-		detailed  ->  BASICDTYPE 0x555556a6e3c0 <e1143> {f29ba} @dt=this@(G/swu32/4)  logic [GENERIC] kwd=logic range=[31:0]
+		detailed  ->  BASICDTYPE 0x555556a6e6c0 <e1157> {f29ba} @dt=this@(G/swu32/4)  logic [GENERIC] kwd=logic range=[31:0]
+		detailed  ->  BASICDTYPE 0x555556a6fe00 <e1448> {m44az} @dt=this@(G/swu32/5)  logic [GENERIC] kwd=logic range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a62600 <e936> {e52bk} @dt=this@(G/swu32/6)  logic [GENERIC] kwd=logic range=[31:0]
-		detailed  ->  BASICDTYPE 0x555556a63140 <e1013> {e108bk} @dt=this@(G/swu32/7)  logic [GENERIC] kwd=logic range=[31:0]
-		detailed  ->  BASICDTYPE 0x555556a6fb00 <e1442> {m45bi} @dt=this@(G/w32)  logic [GENERIC] kwd=logic range=[31:0]
+		detailed  ->  BASICDTYPE 0x555556a63440 <e1027> {e110bk} @dt=this@(G/swu32/7)  logic [GENERIC] kwd=logic range=[31:0]
+		detailed  ->  BASICDTYPE 0x555556a8d500 <e1624> {m62au} @dt=this@(G/swu32/11)  logic [GENERIC] kwd=logic range=[31:0]
+		detailed  ->  BASICDTYPE 0x555556a8c0c0 <e1473> {m47bi} @dt=this@(G/w32)  logic [GENERIC] kwd=logic range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a3c240 <e26> {d38az} @dt=this@(G/sw32)  integer [GENERIC] kwd=integer range=[31:0]
 		detailed  ->  BASICDTYPE 0x555556a51140 <e479> {d169ah} @dt=this@(G/str)  string [GENERIC] kwd=string
 		detailed  ->  BASICDTYPE 0x555556a51080 <e473> {d169ao} @dt=this@(G/w296)  logic [GENERIC] kwd=logic range=[295:0]
+		detailed  ->  BASICDTYPE 0x555556a8d5c0 <e1629> {m62ba} @dt=this@(G/w408)  logic [GENERIC] kwd=logic range=[407:0]
+		detailed  ->  BASICDTYPE 0x555556a926c0 <e1753> {m76be} @dt=this@(G/w520)  logic [GENERIC] kwd=logic range=[519:0]
+		detailed  ->  BASICDTYPE 0x555556a8db00 <e1669> {m66ba} @dt=this@(G/w576)  logic [GENERIC] kwd=logic range=[575:0]
     3:1: BASICDTYPE 0x555556a3c240 <e26> {d38az} @dt=this@(G/sw32)  integer [GENERIC] kwd=integer range=[31:0]
     3:1: BASICDTYPE 0x555556a3c3c0 <e47> {d40be} @dt=this@(G/swu32/1)  logic [GENERIC] kwd=logic range=[31:0]
     3:1: BASICDTYPE 0x555556a3ca80 <e102> {d57at} @dt=this@(G/w1)  logic [GENERIC] kwd=logic
@@ -273,9 +326,15 @@ Verilator Tree Dump (format 0x3900) from <e1939> to <e2165>
     3:1: BASICDTYPE 0x555556a51080 <e473> {d169ao} @dt=this@(G/w296)  logic [GENERIC] kwd=logic range=[295:0]
     3:1: BASICDTYPE 0x555556a51140 <e479> {d169ah} @dt=this@(G/str)  string [GENERIC] kwd=string
     3:1: BASICDTYPE 0x555556a62600 <e936> {e52bk} @dt=this@(G/swu32/6)  logic [GENERIC] kwd=logic range=[31:0]
-    3:1: BASICDTYPE 0x555556a63140 <e1013> {e108bk} @dt=this@(G/swu32/7)  logic [GENERIC] kwd=logic range=[31:0]
-    3:1: BASICDTYPE 0x555556a6e3c0 <e1143> {f29ba} @dt=this@(G/swu32/4)  logic [GENERIC] kwd=logic range=[31:0]
-    3:1: BASICDTYPE 0x555556a6fb00 <e1442> {m45bi} @dt=this@(G/w32)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a63440 <e1027> {e110bk} @dt=this@(G/swu32/7)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a6e6c0 <e1157> {f29ba} @dt=this@(G/swu32/4)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a6fe00 <e1448> {m44az} @dt=this@(G/swu32/5)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a8c0c0 <e1473> {m47bi} @dt=this@(G/w32)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a8d500 <e1624> {m62au} @dt=this@(G/swu32/11)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a8d5c0 <e1629> {m62ba} @dt=this@(G/w408)  logic [GENERIC] kwd=logic range=[407:0]
+    3:1: BASICDTYPE 0x555556a8db00 <e1669> {m66ba} @dt=this@(G/w576)  logic [GENERIC] kwd=logic range=[575:0]
+    3:1: BASICDTYPE 0x555556a92180 <e1706> {m71cl} @dt=this@(G/wu32/1)  logic [GENERIC] kwd=logic range=[31:0]
+    3:1: BASICDTYPE 0x555556a926c0 <e1753> {m76be} @dt=this@(G/w520)  logic [GENERIC] kwd=logic range=[519:0]
     3: CONSTPOOL 0x5555569ce000 <e7> {a0aa}
     3:1: MODULE 0x5555569d0000 <e6> {a0aa}  @CONST-POOL@  L0 D0 [NONE]
     3:1:2: SCOPE 0x5555569d2000 <e5> {a0aa}  @CONST-POOL@ [abovep=0] [cellp=0] [modp=0x5555569d0000]

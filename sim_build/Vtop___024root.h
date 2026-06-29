@@ -29,26 +29,20 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __VicoFirstIteration;
     CData/*0:0*/ __VicoPhaseResult;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__address_decoder__DOT__clk__0;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__address_decoder__DOT__rst_n__0;
-    CData/*0:0*/ __VactPhaseResult;
-    CData/*0:0*/ __VnbaPhaseResult;
     VL_IN(input_address,31,0);
     IData/*31:0*/ address_decoder__DOT__input_address;
-    IData/*31:0*/ __VactIterCount;
+    IData/*31:0*/ address_decoder__DOT__unnamedblk1__DOT__index;
     VL_OUT64(enables,32,0);
     QData/*32:0*/ address_decoder__DOT__enables;
     VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VicoTriggered;
-    VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
-    VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;
     const char* vlNamep;
 
     // PARAMETERS
-    static constexpr IData/*31:0*/ address_decoder__DOT__BASE_ADDRESS = 0x20000000U;
+    static constexpr IData/*31:0*/ address_decoder__DOT__BASE_ADDRESS = 0x20000002U;
     static const Vtop_endpoint_config_t__struct__0 address_decoder__DOT__MODULE_CONFIG;
     static const VlUnpacked<Vtop_cell_config_t__struct__0, 64> address_decoder__DOT__CELL_CONFIG;
 

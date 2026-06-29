@@ -37,6 +37,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop__Syms final : public VerilatedSyms {
     // SCOPE NAMES
     VerilatedScope* __Vscopep_TOP;
     VerilatedScope* __Vscopep_address_decoder;
+    VerilatedScope* __Vscopep_address_decoder__is_addr_split_correct;
+    VerilatedScope* __Vscopep_address_decoder__is_base_aligned;
+    VerilatedScope* __Vscopep_address_decoder__unnamedblk1;
+    VerilatedScope* __Vscopep_address_decoder__unnamedblk1__cell_validation__is_offset_aligned;
     VerilatedScope* __Vscopep_bus_endpoint;
 
     // SCOPE HIERARCHY

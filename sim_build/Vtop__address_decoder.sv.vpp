@@ -48,36 +48,59 @@ module address_decoder #(
         }
     },
     parameter endpoint_config_t MODULE_CONFIG = '{
-        bus:        bus_endpoint::BUS_AXI_LITE,
-        burst:      0,
-        atomic:     0,
-        data_width: 32,
-        addr_width: 32
+        bus:            bus_endpoint::BUS_AXI_LITE,
+        burst:          0,
+        atomic:         0,
+        data_width:     32,
+        addr_width:     32,
+        prefix_size:    20,
+        suffix_size:    12
     },
-    parameter int BASE_ADDRESS = 32'h20000000
+    parameter int BASE_ADDRESS = 32'h20000002
 ) (
     input   logic                                                   clk,
     input   logic                                                   rst_n,
     input   logic [MODULE_CONFIG.addr_width -1 : 0]                 input_address,
     input   logic                                                   addr_valid,
     output  logic                                                   match,
-    output  logic [max($size(CELL_CONFIG[0].cell_config), 1) : 0 ]    enables
+    output  logic [max($size(CELL_CONFIG[0].cell_config), 1) : 0 ]  enables
 );
 
-`line 55 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
-    always_ff @(posedge clk or negedge rst_n) begin
-
 `line 57 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
-        if (input_address == BASE_ADDRESS) begin
-            match <= 1'b1;
-        end else begin
-            match <= 1'b0;
+    
+
+`line 59 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+ 
+    generate
+        if ((BASE_ADDRESS & 32'h3) != 0) begin: is_address_aligned
+            $fatal(1024, "Base address is not aligned with a 4 byte boundary.");
         end
 
-`line 63 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
-    end
-
 `line 65 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+        if ((MODULE_CONFIG.prefix_size + MODULE_CONFIG.suffix_size) != MODULE_CONFIG.addr_width) begin: is_address_configured
+            $fatal(1025, "Sum of prefix and suffix of the address does not match the address size.");
+        end
+    endgenerate
+
+`line 70 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+    genvar index;
+    generate for (index = 0; index < $size(CELL_CONFIG); index++) begin
+
+`line 73 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+        localparam int CURRENT_ADDR = (CELL_CONFIG[index].offset & 32'h3);
+
+`line 75 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+            if (CURRENT_ADDR != 0) begin: is_offset_aligned
+                $fatal(1026, "Cell config at index 0x%0h is not aligned with a 4 byte boundary.", index);
+        end
+    end
+    endgenerate
+   
+
+`line 82 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+    
+
+`line 84 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
 endmodule: address_decoder
 
-`line 67 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0
+`line 86 "/home/user/dev/endpoints/rtl/modules/address_decoder.sv" 0

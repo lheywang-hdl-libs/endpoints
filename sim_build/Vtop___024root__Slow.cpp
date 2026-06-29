@@ -6,7 +6,7 @@
 
 // Parameter definitions for Vtop___024root
 constexpr IData/*31:0*/ Vtop___024root::address_decoder__DOT__BASE_ADDRESS;
-const Vtop_endpoint_config_t__struct__0 Vtop___024root::address_decoder__DOT__MODULE_CONFIG = Vtop_endpoint_config_t__struct__0{.__PVT__bus = 1U, .__PVT__burst = 0U, .__PVT__atomic = 0U, .__PVT__data_width = 0x00000020U, .__PVT__addr_width = 0x00000020U};
+const Vtop_endpoint_config_t__struct__0 Vtop___024root::address_decoder__DOT__MODULE_CONFIG = Vtop_endpoint_config_t__struct__0{.__PVT__bus = 1U, .__PVT__burst = 0U, .__PVT__atomic = 0U, .__PVT__data_width = 0x00000020U, .__PVT__addr_width = 0x00000020U, .__PVT__prefix_size = 0x00000014U, .__PVT__suffix_size = 0x0000000cU};
 const VlUnpacked<Vtop_cell_config_t__struct__0, 64> Vtop___024root::address_decoder__DOT__CELL_CONFIG = {{
     Vtop_cell_config_t__struct__0{.__PVT__cell_type = 1U, .__PVT__offset = 0U, .__PVT__size = 4U, .__PVT__mem_size = 0U, .__PVT__cell_config = {{
             Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0x00000020U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U}, Vtop_field_config_t__struct__0{.__PVT__bit_offset = 0U, .__PVT__bit_width = 0U},

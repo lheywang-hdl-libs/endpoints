@@ -38,12 +38,16 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedVcd::Buf
                             .__PVT__data_width),32);
     bufp->chgIData(oldp+11,(vlSelfRef.address_decoder__DOT__MODULE_CONFIG
                             .__PVT__addr_width),32);
-    bufp->chgBit(oldp+12,(vlSelfRef.address_decoder__DOT__clk));
-    bufp->chgBit(oldp+13,(vlSelfRef.address_decoder__DOT__rst_n));
-    bufp->chgIData(oldp+14,(vlSelfRef.address_decoder__DOT__input_address),32);
-    bufp->chgBit(oldp+15,(vlSelfRef.address_decoder__DOT__addr_valid));
-    bufp->chgBit(oldp+16,(vlSelfRef.address_decoder__DOT__match));
-    bufp->chgQData(oldp+17,(vlSelfRef.address_decoder__DOT__enables),33);
+    bufp->chgIData(oldp+12,(vlSelfRef.address_decoder__DOT__MODULE_CONFIG
+                            .__PVT__prefix_size),32);
+    bufp->chgIData(oldp+13,(vlSelfRef.address_decoder__DOT__MODULE_CONFIG
+                            .__PVT__suffix_size),32);
+    bufp->chgBit(oldp+14,(vlSelfRef.address_decoder__DOT__clk));
+    bufp->chgBit(oldp+15,(vlSelfRef.address_decoder__DOT__rst_n));
+    bufp->chgIData(oldp+16,(vlSelfRef.address_decoder__DOT__input_address),32);
+    bufp->chgBit(oldp+17,(vlSelfRef.address_decoder__DOT__addr_valid));
+    bufp->chgBit(oldp+18,(vlSelfRef.address_decoder__DOT__match));
+    bufp->chgQData(oldp+19,(vlSelfRef.address_decoder__DOT__enables),33);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

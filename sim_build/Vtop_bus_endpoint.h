@@ -61,21 +61,25 @@ struct Vtop_endpoint_config_t__struct__0 {
     CData/*0:0*/ __PVT__atomic;
     IData/*31:0*/ __PVT__data_width;
     IData/*31:0*/ __PVT__addr_width;
+    IData/*31:0*/ __PVT__prefix_size;
+    IData/*31:0*/ __PVT__suffix_size;
 
     bool operator==(const Vtop_endpoint_config_t__struct__0& rhs) const {
         return __PVT__bus == rhs.__PVT__bus
             && __PVT__burst == rhs.__PVT__burst
             && __PVT__atomic == rhs.__PVT__atomic
             && __PVT__data_width == rhs.__PVT__data_width
-            && __PVT__addr_width == rhs.__PVT__addr_width;
+            && __PVT__addr_width == rhs.__PVT__addr_width
+            && __PVT__prefix_size == rhs.__PVT__prefix_size
+            && __PVT__suffix_size == rhs.__PVT__suffix_size;
     }
     bool operator!=(const Vtop_endpoint_config_t__struct__0& rhs) const {
         return !(*this == rhs);
     }
 
     bool operator<(const Vtop_endpoint_config_t__struct__0& rhs) const {
-        return std::tie(__PVT__bus, __PVT__burst, __PVT__atomic, __PVT__data_width, __PVT__addr_width)
-            <  std::tie(rhs.__PVT__bus, rhs.__PVT__burst, rhs.__PVT__atomic, rhs.__PVT__data_width, rhs.__PVT__addr_width);
+        return std::tie(__PVT__bus, __PVT__burst, __PVT__atomic, __PVT__data_width, __PVT__addr_width, __PVT__prefix_size, __PVT__suffix_size)
+            <  std::tie(rhs.__PVT__bus, rhs.__PVT__burst, rhs.__PVT__atomic, rhs.__PVT__data_width, rhs.__PVT__addr_width, rhs.__PVT__prefix_size, rhs.__PVT__suffix_size);
     }
 };
 template <>

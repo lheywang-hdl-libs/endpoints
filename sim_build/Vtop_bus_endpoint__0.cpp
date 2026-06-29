@@ -36,6 +36,8 @@ std::string VL_TO_STRING(const Vtop_endpoint_config_t__struct__0& obj) {
     out += ", atomic:" + VL_TO_STRING(obj.__PVT__atomic);
     out += ", data_width:" + VL_TO_STRING(obj.__PVT__data_width);
     out += ", addr_width:" + VL_TO_STRING(obj.__PVT__addr_width);
+    out += ", prefix_size:" + VL_TO_STRING(obj.__PVT__prefix_size);
+    out += ", suffix_size:" + VL_TO_STRING(obj.__PVT__suffix_size);
     out += "}";
     return (out);
 }

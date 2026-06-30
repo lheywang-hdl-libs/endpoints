@@ -1,0 +1,44 @@
+endpoint:
+  name: Example AXI-Lite module
+  bus: AXI-LITE
+  enable_atomic: true
+  enable_burst: true
+  data_size: 32
+  addr_size: 32
+  prefix_size: 20
+  suffix_size: 12
+
+  base_address: 0x20000000
+
+cells:
+  - name: status
+    type: register
+    direction: input
+    size: 32
+    bitfields:
+      - enabled:
+        offset: 0
+        size: 1
+      - selected_source:
+        offset: 4
+        size: 4
+      - error_code:
+        offset: 8
+        size: 8
+      - active_channels:
+        offset: 16
+        size: 16
+  - name: config
+    type: register
+    direction: output
+    size: 32
+    bitfields:
+      - enable:
+        offset: 0
+        size: 1
+      - select_source:
+        offset: 4
+        size: 4
+      - active_channels:
+        offset: 16
+        size: 16

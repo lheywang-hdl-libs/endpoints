@@ -1,6 +1,7 @@
 # Python 
 
 *__pycache__
+*generated/*
 
 # Logs
 *.txt

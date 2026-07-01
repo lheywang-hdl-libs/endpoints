@@ -14,31 +14,92 @@ cells:
   - name: status
     type: register
     direction: input
-    size: 32
+    offset: 0
+    size: 4
     bitfields:
-      - enabled:
+      - name: enabled
         offset: 0
         size: 1
-      - selected_source:
+      - name: selected_source
         offset: 4
         size: 4
-      - error_code:
+      - name: error_code
         offset: 8
         size: 8
-      - active_channels:
+      - name: active_channels
         offset: 16
         size: 16
   - name: config
     type: register
     direction: output
-    size: 32
+    offset: 4
+    size: 4
     bitfields:
-      - enable:
+      - name: enable
         offset: 0
         size: 1
-      - select_source:
+      - name: select_source
         offset: 4
         size: 4
-      - active_channels:
+      - name: active_channels
         offset: 16
         size: 16
+  - name: input
+    type: fifo
+    direction: input
+    offset: 12
+    size: 4
+    mem_size: 32
+  - name: output
+    type: fifo
+    direction: output
+    offset: 16
+    size: 4
+    mem_size: 32
+  - name: coeff0
+    type: multiregister
+    direction: input
+    offset: 20
+    size: 8
+    bitfields:
+      - name: coeff
+        offset: 0
+        size: 64
+  - name: coeff1
+    type: multiregister
+    direction: input
+    offset: 28
+    size: 8
+    bitfields:
+      - name: coeff
+        offset: 0
+        size: 64
+  - name: coeff2
+    type: multiregister
+    direction: input
+    offset: 36
+    size: 8
+    bitfields:
+      - name: coeff
+        offset: 0
+        size: 64
+  - name: raw_data
+    type: sram
+    direction: output
+    offset: 64
+    size: 16
+    mem_size: 16
+  - name: interrupts
+    type: irq
+    direction: output
+    offset: 80
+    size: 4
+  - name: coeffN
+    type: multiregister
+    direction: input
+    offset: 96
+    size: 64
+    bitfields:
+      - name: coeff
+        offset: 0
+        size: 64

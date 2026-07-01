@@ -19,6 +19,8 @@ package bus_endpoint;
     typedef enum int {
         TYPE_REG_IN,
         TYPE_REG_OUT,
+        TYPE_NREG_IN,
+        TYPE_NREG_OUT,
         TYPE_FIFO_IN,
         TYPE_FIFO_OUT,
         TYPE_SRAM_IN,

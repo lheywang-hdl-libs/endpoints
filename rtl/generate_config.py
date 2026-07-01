@@ -98,6 +98,8 @@ def log(header: str, message: str):
         color = "\033[93m"
     elif header == "ERROR":
         color = "\033[91m"
+    elif header == "OK":
+        color = "\033[92m"
 
     print(color + string + "\033[0m")
 
@@ -143,7 +145,7 @@ def load_config(path: Path) -> tuple[Endpoint, list[Cell]]:
     except Exception as e:
         log("ERROR", f"Could not load the endpoint config from {Path} : {e}")
 
-    log("INFO", "Finished the endpoint.")
+    log("INFO", f"Finished the endpoint.")
 
     # Then, load the cells config
     cells: list[Cell] = []
@@ -168,7 +170,13 @@ def load_config(path: Path) -> tuple[Endpoint, list[Cell]]:
             cell_cfg.mem_size = int(cell_config.get("mem_size", 0))
 
             # Load the bitfield config
-            if cell_cfg.type in ["REGISTER_INPUT", "REGISTER_OUTPUT", "IRQ"]:
+            if cell_cfg.type in [
+                "REGISTER_INPUT",
+                "REGISTER_OUTPUT",
+                "MULTIREGISTER_INPUT",
+                "MULTIREGISTER_OUTPUT",
+                "IRQ",
+            ]:
                 log("INFO", "Loading the required bitfields")
 
                 for bitfield in cell_config["bitfields"]:
@@ -178,19 +186,18 @@ def load_config(path: Path) -> tuple[Endpoint, list[Cell]]:
                     # Loading parameters
                     bitfield_cfg.name = str(bitfield.get("name", "Default"))
                     bitfield_cfg.offset = int(bitfield.get("offset", 0))
-                    bitfield_cfg.width = int(bitfield.get("width", 32))
+                    bitfield_cfg.width = int(bitfield.get("size", 32))
 
                     cell_cfg.bitfield.append(bitfield_cfg)
 
             cells.append(cell_cfg)
+            log("INFO", f"Loaded cell {cell_cfg.name}")
 
         except Exception as e:
             log(
                 "ERROR",
                 f"Could not load cell at index {index} with the following error : {e}",
             )
-
-        log("INFO", "Loaded cell.")
 
     return endpoint_cfg, cells
 
@@ -208,7 +215,7 @@ def validate_endpoint(endpoint) -> bool:
     if endpoint.bus.upper() not in valid_bus:
         log(
             "ERROR",
-            "The cell bus is unknown. Please ensure it match one of the following : ",
+            "The endpoint bus is unknown. Please ensure it match one of the following : ",
         )
         for valid in valid_bus:
             log("", valid)
@@ -265,17 +272,92 @@ def validate_endpoint(endpoint) -> bool:
     return True
 
 
-def validate_cell(cell) -> bool:
+def validate_cell(cells: list[Cell]) -> bool:
 
-    valid_type = [
-        "REGISTER_INPUT",
-        "REGISTER_OUTPUT",
-        "FIFO_INPUT",
-        "FIFO_OUTPUT",
-        "SRAM_INPUT",
-        "SRAM_OUTPUT",
-        "IRQ",
-    ]
+    current_address = 0
+
+    for index, cell in enumerate(cells):
+
+        valid_type = [
+            "REGISTER_INPUT",
+            "REGISTER_OUTPUT",
+            "MULTIREGISTER_INPUT",
+            "MULTIREGISTER_OUTPUT",
+            "FIFO_INPUT",
+            "FIFO_OUTPUT",
+            "SRAM_INPUT",
+            "SRAM_OUTPUT",
+            "IRQ_INPUT",
+            "IRQ_OUTPUT",
+        ]
+
+        if cell.type.upper() not in valid_type:
+            log(
+                "ERROR",
+                f"The cell type is unknown at index {index}. Please ensure it match one of the following : ",
+            )
+            for valid in valid_type:
+                log("", valid)
+
+            return False
+
+        # Checking the address is free
+        if cell.offset < current_address:
+            log("ERROR", f"Cell at index {index} overlaps the previous cell.")
+            return False
+
+        # Checking the adress is aligned with a 4 byte boundary
+        if (cell.offset & 0x3) != 0:
+            log(
+                "ERROR",
+                f"Cell at index {index} is not aligned to a four byte boundary.",
+            )
+            return False
+
+        # Checking memory sizes
+        if cell.type in ["FIFO_INPUT", "FIFO_OUTPUT"]:
+            if cell.mem_size == 0:
+                cell.mem_size = 16
+                log("WARNING", "FIFO size was not provided. Used a default value (16).")
+
+        if cell.type in ["MULTIREGISTER_INPUT", "MULTIREGISTER_OUTPUT"]:
+            if cell.size > 32:
+                log(
+                    "WARNING",
+                    f"MULTIREGISTER cell size at index {index} was detected to be high (> 32). Consider using an SRAM cell for this usage.",
+                )
+
+        if cell.type in ["SRAM_INPUT", "SRAM_OUTPUT"]:
+            if cell.mem_size != cell.size:
+                cell.mem_size = cell.size
+                log(
+                    "WARNING",
+                    "SRAM size was not fully mapped. Memsize was set according the size",
+                )
+
+        if cell.type == "IRQ_OUTPUT":
+            cell.type = "IRQ_INPUT"
+            log(
+                "WARNING",
+                f"Cell IRQ at index {index} was set as INPUT. An IRQ cell cannot be an OUTPUT.",
+            )
+
+        # Get the new base address.
+        current_address = cell.offset + cell.size
+
+        # Validating the bitfields config
+        current_bit = 0
+        for index, bits in enumerate(cell.bitfield):
+            if bits.offset < current_bit:
+                log(
+                    "ERROR", f"Bitfield at index {index} overlaps the previous element."
+                )
+                return False
+
+            # No alignement to check
+
+            # Update the config here
+            current_bit = bits.offset + bits.width
 
     return True
 
@@ -285,7 +367,99 @@ def validate_cell(cell) -> bool:
 # ----------------------------------
 
 
-def generate_instances(cells: list[Cell]) -> bool:
+def generate_instances(
+    endpoint: Endpoint, cells: list[Cell], output_path: Path = Path("./generated/")
+) -> bool:
+    return True
+
+
+def generate_includes(
+    endpoint: Endpoint, cells: list[Cell], output_path: Path = Path("./generated/")
+) -> bool:
+    return True
+
+
+def generate_regmap(
+    endpoint: Endpoint, cells: list[Cell], output_path: Path = Path("./generated/")
+) -> bool:
+    # First, generate the global reg map
+
+    with open(output_path / "register_map.txt", "w+") as f:
+
+        # Add header
+        f.write("*\n")
+        f.write("* Generated py generate_config.py\n")
+        f.write(f"* On {datetime.now()}\n")
+        f.write("*\n")
+        f.write("* Do not edit by hand\n")
+        f.write("* Any change :\n")
+        f.write("*  - WILL be overwritten the next generation.\n")
+        f.write("*  - WILL break the link between the config and the documentation.\n")
+        f.write("*\n")
+        f.write("\n")
+
+        # Top line
+        print("*" * 120)
+        f.write("*" * 120 + "\n")
+
+        # Title
+        print(f"* {"REGISTER MAP":116} *")
+        f.write(f"* {"REGISTER MAP":116} *" + "\n")
+
+        # Columns
+        print(
+            f"* {"ADDRESS":20} {"NAME":20} {"TYPE":20} {"SIZE":20} {"MEMORY SIZE":20} {" ":12}*"
+        )
+        f.write(
+            f"* {"ADDRESS":20} {"NAME":20} {"TYPE":20} {"SIZE":20} {"MEMORY SIZE":20} {" ":12}*"
+            + "\n"
+        )
+
+        # Cells contents
+        for cell in cells:
+            print(
+                f"* 0x{(endpoint.address + cell.offset):<18x} {cell.name.upper():<20} {cell.type.upper():<20} 0x{cell.size:<18} 0x{cell.mem_size:<18} {" ":12}*"
+            )
+            f.write(
+                f"* 0x{(endpoint.address + cell.offset):<18x} {cell.name.upper():<20} {cell.type.upper():<20} 0x{cell.size:<18} 0x{cell.mem_size:<18} {" ":12}*"
+                + "\n"
+            )
+
+        # Bottom row
+        print("*" * 120)
+        f.write("*" * 120 + "\n")
+        f.write("\n\n")
+
+        # Generating register maps :
+        for cell in cells:
+            if len(cell.bitfield) > 0:
+
+                # Top line
+                f.write("*" * 120 + "\n")
+
+                # Title
+                f.write(f"* {f"BITFIELD MAP ({cell.name})":<116} *" + "\n")
+
+                # Columns
+                f.write(f"* {"BITS":20} {"NAME":20} {" ":75}*" + "\n")
+
+                for bits in cell.bitfield:
+                    if bits.width > 1:
+                        f.write(
+                            f"* {f"{bits.offset}-{bits.offset + bits.width - 1}":<20} {bits.name:<20} {" ":75}*"
+                            + "\n"
+                        )
+                    else:
+                        f.write(f"* {bits.offset:<20} {bits.name:<20} {" ":75}*" + "\n")
+
+                f.write("*" * 120 + "`\n")
+                f.write("\n\n")
+
+        # Footer
+        f.write("*\n")
+        f.write("* End of file.\n")
+        f.write("*\n")
+
     return True
 
 
@@ -295,42 +469,74 @@ def generate_instances(cells: list[Cell]) -> bool:
 if __name__ == "__main__":
 
     # Add the arguments
-    parser = argparse.ArgumentParser(
-        prog="Endpoint config generator tool.",
-        usage="Pass the YAML configuration file, and see the results !",
-        description="Parse the config, load the different registers and build the right assignements for you.",
-    )
+    parser = argparse.ArgumentParser()
+    parser.description = "Parse the config, load the different registers and build the right assignements for you."
 
     parser.add_argument("config", help="The config file that must be loaded")
     parser.add_argument(
+        "--output",
+        help="Configure the used output path. Default to ./generated/",
+        default="./generated/",
+    )
+    parser.add_argument(
         "--validate", action="store_true", help="Only perform the config validation."
+    )
+    parser.add_argument(
+        "--no-regmap",
+        dest="regmap",
+        action="store_false",
+        help="Disable the register map generation.",
     )
 
     args = parser.parse_args()
 
+    # Clear the log file (give one run of logs as backup)
+    logs = Path("log.txt").rename("log_old.txt")
+
     # Load the config
     log("INFO", "Starting the config loading...")
     endpoint, cells = load_config(args.config)
-    log("", "")
+    log("", "--------------------------------------")
 
     # Validating the config
     log("INFO", "Starting the config validation...")
     result = True
     result &= validate_endpoint(endpoint)
 
-    for cell in cells:
-        result &= validate_cell(cell)
-
-    if args.validate == True:
-        log("INFO", "File generation was not requested. Ending operation here.")
-        exit(0)
+    result &= validate_cell(cells)
 
     if result == False:
         log("ERROR", "The config was not correct. Aborting.")
         exit(1)
 
-    log("INFO", "The config was validated.")
+    log("OK", "The config was validated.")
+
+    if args.validate == True:
+        log("OK", "File generation was not requested. Ending operation here.")
+        exit(0)
+
     log("INFO", "Starting file generation.")
-    log("", "")
+    log("", "--------------------------------------")
+
+    # Creating the file path
+    output_p = Path(args.output).mkdir(parents=True, exist_ok=True)
 
     # Export the results
+    log("INFO", "Generating System Verilog Includes files ...")
+    status = True
+    status &= generate_includes(endpoint, cells, Path(args.output))
+    status &= generate_instances(endpoint, cells, Path(args.output))
+
+    if status:
+        log("OK", "Generated System Verilog files.")
+    else:
+        log("ERROR", "Could not generate SystemVerilog files.")
+        exit(2)
+
+    if args.regmap:
+        log("INFO", "Generating Register map documentation files ...")
+        if generate_regmap(endpoint, cells, Path(args.output)):
+            log("OK", "Generated Register map documentation.")
+
+    # Exiting
+    exit(0)
